@@ -13,13 +13,13 @@ module.exports = {
     hot: true,
   },
   entry: {
-    index: path.join(srcRoot, "index", "index.tsx"),
+    index: path.join(srcRoot, "indexPage", "index.tsx"),
     // category: "../src/pages/category/index.js",
     // detail: "../src/pages/detail/index.js",
     // evaluation: "../src/pages/evaluation/index.js",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js"],
     alias: {
       component: path.resolve(srcRoot, "component"),
     },
@@ -44,12 +44,12 @@ module.exports = {
           "style-loader",
           "css-loader",
           "sass-loader",
-          {
-            loader: "sass-resources-loader",
-            options: {
-              resources: srcRoot + "/component/common.scss",
-            },
-          },
+          // {
+          //   loader: "sass-resources-loader",
+          //   options: {
+          //     resources: srcRoot + "/component/common.scss",
+          //   },
+          // },
         ],
         include: srcRoot,
       },
@@ -62,6 +62,12 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: ["babel-loader"], //小于8k的转base64
         include: srcRoot,
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        loader: ["ts-loader"], //小于8k的转base64
+        exclude: /node_modules/,
       },
     ],
   },
@@ -78,7 +84,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(srcRoot, "index", "index.html"),
+      template: path.join(srcRoot, "indexPage", "index.html"),
       filename: "index.html",
       // chunks 表示该页面要引用哪些 chunk （即上面的 index 和 other），默认全部引用
       chunks: ["common", "index"], // 只引用 index.js
