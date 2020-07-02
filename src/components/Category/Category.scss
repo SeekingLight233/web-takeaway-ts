@@ -1,0 +1,21 @@
+.category {
+  overflow: hidden;
+  .category-item {
+    float: left;
+    width: 20%;
+    padding-top: 14px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item-icon {
+    width: 44px;
+  }
+  .item-name {
+    margin-top: 7px;
+    font-size: 11px;
+    color: #333;
+  }
+}

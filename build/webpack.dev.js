@@ -67,7 +67,7 @@ module.exports = {
       },
       {
         test: /\.(ts|tsx)$/,
-        loader: ["ts-loader", "eslint-loader"], //小于8k的转base64
+        loader: ["ts-loader"], //小于8k的转base64
         exclude: /node_modules/,
       },
     ],

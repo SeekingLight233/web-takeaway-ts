@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    // "target": "es5"
-    // "allowJs": true
-    // "skipLibCheck": true
+    "target": "es5",
+    "allowJs": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     //     "allowSyntheticDefaultImports": true,
     // "strict": true
@@ -12,6 +12,6 @@
     //     "resolveJsonModule": true,
     //     // "isolatedModules": true,
     "jsx": "react"
-  }
-  //   "exclude": ["node_modules", "build", "public"]
+  },
+  "exclude": ["node_modules", "build", "public"]
 }

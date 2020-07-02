@@ -1,7 +1,10 @@
+/**
+ * @description 底部的导航栏
+ */
 import React, { useCallback } from "react";
 import "./BottomBar.scss";
 import { connect, ConnectedProps } from "react-redux";
-import { RootState } from "../models";
+import { RootState } from "../../Models";
 // import tabModel from "../models/tab";
 import classNames from "classnames";
 

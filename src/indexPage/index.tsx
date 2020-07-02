@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { Provider } from "react-redux";
-import store from "./models/dva";
-import Index from "./Index/index";
+import store from "../Models/dva";
+import Router from "./Router/index";
 
 ReactDom.render(
   <Provider store={store}>
-    <Index></Index>
+    <Router></Router>
   </Provider>,
   document.getElementById("root")
 );
