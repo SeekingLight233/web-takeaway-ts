@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const srcRoot = path.resolve(__dirname, "..", "src");
+
 const devPath = path.resolve(__dirname, "..", "dev");
 const webpack = require("webpack");
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -21,7 +22,7 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
     alias: {
-      component: path.resolve(srcRoot, "component"),
+      component: path.resolve(srcRoot, "components"),
     },
   },
 
@@ -44,12 +45,12 @@ module.exports = {
           "style-loader",
           "css-loader",
           "sass-loader",
-          // {
-          //   loader: "sass-resources-loader",
-          //   options: {
-          //     resources: srcRoot + "/component/common.scss",
-          //   },
-          // },
+          {
+            loader: "sass-resources-loader",
+            options: {
+              resources: srcRoot + "/components/common.scss",
+            },
+          },
         ],
         include: srcRoot,
       },
@@ -66,7 +67,7 @@ module.exports = {
       },
       {
         test: /\.(ts|tsx)$/,
-        loader: ["ts-loader"], //小于8k的转base64
+        loader: ["ts-loader", "eslint-loader"], //小于8k的转base64
         exclude: /node_modules/,
       },
     ],
