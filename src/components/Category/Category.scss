@@ -1,7 +1,8 @@
 .category {
-  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   .category-item {
-    float: left;
     width: 20%;
     padding-top: 14px;
     font-size: 13px;

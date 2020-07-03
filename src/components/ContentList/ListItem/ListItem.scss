@@ -1,0 +1,52 @@
+.list-item {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  .left-item {
+    width: 76px;
+    height: 57px;
+
+    .item-img {
+      width: 100%;
+    }
+  }
+  .right-item {
+    flex: 1;
+    border: 1px solid red;
+    .shop-name {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.4;
+      white-space: nowrap;
+      width: 80%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 600;
+    }
+    .item-desc {
+      display: flex;
+      flex-direction: row;
+      .item-sales {
+        flex: 1;
+        height: 16px;
+        .star {
+          background: url("./img/star.png");
+          width: 12px;
+          height: 12px;
+          float: left;
+          background-position: 40% 5.66%;
+          background-size: 126% 379%;
+          transform: scale(0.83);
+        }
+        .gray-star {
+          background-position: 40% 96.226%;
+        }
+      }
+      .item-delivery {
+        text-align: right;
+        flex: 1;
+      }
+    }
+  }
+}

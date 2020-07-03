@@ -1,0 +1,728 @@
+{
+  "data": {
+    "poiTotalNum": 0,
+    "poiHasNextPage": true,
+    "nextStartIndex": 6,
+    "shopList": [
+      {
+        "mtWmPoiId": "1064014931983119",
+        "shopName": "曼玉融合餐厅（万象城店）",
+        "wmPoiScore": 48,
+        "monthSalesTip": "月售7000",
+        "picUrl": "http://p1.meituan.net/business/6a9fef673e6ff3bbb5d36d22718b6c55129443.png",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "38分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥3",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "631m",
+        "averagePriceTip": "人均 ¥27",
+        "recommendInfo": {
+          "icon": "",
+          "recommendReason": "大众点评高分店铺",
+          "type": 3
+        },
+        "discounts2": [
+          {
+            "info": "折扣商品6.82折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          }
+        ],
+        "address": "郑州市二七区民主路万象城购物中心519、520、521号（5号门L5直梯上5楼右转）",
+        "shipping_time": "10:30-21:30"
+      },
+      {
+        "mtWmPoiId": "867730631569692",
+        "shopName": "哆哆客汉堡（幸福路店）",
+        "wmPoiScore": 47,
+        "monthSalesTip": "月售3000",
+        "picUrl": "http://p0.meituan.net/waimaipoi/3a361c7cc16d2a16eb2ba95bebc6e03731890.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "31分钟",
+        "deliveryType": 0,
+        "minPriceTip": "起送 ¥15",
+        "shippingFeeTip": "配送 ¥3",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "2.8km",
+        "averagePriceTip": "人均 ¥13",
+        "discounts2": [
+          {
+            "info": "满26减22;满42减27;满55减30;满80减40",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品0.11折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          }
+        ],
+        "address": "郑州市二七区幸福路4号楼附11号",
+        "shipping_time": "00:00-02:34,09:30-23:59"
+      },
+      {
+        "mtWmPoiId": "946255518671637",
+        "shopName": "延庆观炸鸡（中原路店）",
+        "wmPoiScore": 46,
+        "monthSalesTip": "月售500",
+        "picUrl": "http://p1.meituan.net/waimaipoi/a1388ae8017aec95ea0e563f98e8733e40170.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 0,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥2.5",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "2.5km",
+        "averagePriceTip": "人均 ¥23",
+        "discounts2": [
+          {
+            "info": "满33减5;满66减10;满99减13",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          }
+        ],
+        "address": "二七区中原东路112号院2号楼1层12号东侧（中原路康复中街交叉口向西100米路南）",
+        "shipping_time": "09:40-22:00"
+      },
+      {
+        "mtWmPoiId": "1054218111604058",
+        "shopName": "天赐粥棚（经典烙馍菜）",
+        "wmPoiScore": 49,
+        "monthSalesTip": "月售1000",
+        "picUrl": "http://p1.meituan.net/business/1f9d85b0808ed4197d4609e6fe6125cb45563.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥3.3",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "1.7km",
+        "averagePriceTip": "人均 ¥21",
+        "discounts2": [
+          {
+            "info": "满20减10;满45减15;满80减25;满120减40",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品0.01折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          }
+        ],
+        "address": "东大街119号",
+        "shipping_time": "00:00-04:00,09:35-23:59"
+      },
+      {
+        "mtWmPoiId": "1015035124970976",
+        "shopName": "CoCo都可(郑州人民店)",
+        "wmPoiScore": 48,
+        "monthSalesTip": "月售1000",
+        "picUrl": "http://p0.meituan.net/waimaipoi/ed31c20e4fc3fb2a8ad99449354a6c3122344.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥25",
+        "shippingFeeTip": "配送 ¥4",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "901m",
+        "averagePriceTip": "人均 ¥16",
+        "recommendInfo": {
+          "icon": "",
+          "recommendReason": "大众点评高分店铺",
+          "type": 3
+        },
+        "discounts2": [
+          {
+            "info": "折扣商品7折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          },
+          {
+            "info": "本店支持开发票，开票金额0元起",
+            "iconUrl": "http://p0.meituan.net/xianfu/476ba65ee80b6385bab292c085baed17940.png",
+            "promotionType": 2,
+            "activityId": -2
+          }
+        ],
+        "address": "人民路跟东太康路交叉口向北100米，河南食府旁coco都可茶饮",
+        "shipping_time": "10:00-22:20"
+      },
+      {
+        "mtWmPoiId": "1112805760475811",
+        "shopName": "1号鸡秘·火锅鸡（郑州一店）",
+        "wmPoiScore": 42,
+        "monthSalesTip": "月售1000",
+        "picUrl": "http://p0.meituan.net/business/9bdb11afe4b77721879417cd18e322e8310347.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥15",
+        "shippingFeeTip": "配送 ¥3",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "903m",
+        "averagePriceTip": "人均 ¥16",
+        "discounts2": [
+          {
+            "info": "满26减2;满45减5;满75减8;满100减12",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "领1元券;领2元券;领5元券",
+            "iconUrl": "http://p1.meituan.net/activityconfig/3fc360f1c726e7148380f4c77fa303fd1475.png",
+            "promotionType": 2,
+            "activityId": 103
+          }
+        ],
+        "address": "郑州市管城回族区南学街35号楼2单元1层68号",
+        "shipping_time": "08:30-23:59"
+      },
+      {
+        "mtWmPoiId": "891932772313056",
+        "shopName": "满记甜品（郑州大卫城店）",
+        "wmPoiScore": 48,
+        "monthSalesTip": "月售400",
+        "picUrl": "http://p0.meituan.net/waimaipoi/2a1dd6915f9e03ac378c5d90026ab8c939094.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥5",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "994m",
+        "averagePriceTip": "人均 ¥53",
+        "recommendInfo": {
+          "icon": "",
+          "recommendReason": "大众点评高分店铺",
+          "type": 3
+        },
+        "discounts2": [
+          {
+            "info": "满39减6;满65减12;满129减20",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品6折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          },
+          {
+            "info": "本店支持开发票，开票金额0元起",
+            "iconUrl": "http://p0.meituan.net/xianfu/476ba65ee80b6385bab292c085baed17940.png",
+            "promotionType": 2,
+            "activityId": -2
+          }
+        ],
+        "address": "郑州市金水区二七路与太康路之间丹尼斯百货大卫城第B1层BF-22号铺",
+        "shipping_time": "10:00-21:30"
+      },
+      {
+        "mtWmPoiId": "901141182187604",
+        "shopName": "1点点（紫荆山商城路店）",
+        "wmPoiScore": 48,
+        "monthSalesTip": "月售1000",
+        "picUrl": "http://p1.meituan.net/waimaipoi/14e9dcddc51489312651dd1284a19186152569.png",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "40分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥4",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "2.0km",
+        "averagePriceTip": "人均 ¥15",
+        "discounts2": [
+          {
+            "info": "本店支持开发票，开票金额0元起",
+            "iconUrl": "http://p0.meituan.net/xianfu/476ba65ee80b6385bab292c085baed17940.png",
+            "promotionType": 2,
+            "activityId": -2
+          }
+        ],
+        "address": "郑州市管城区商城路267号",
+        "shipping_time": "10:05-22:05"
+      },
+      {
+        "mtWmPoiId": "1117465799951686",
+        "shopName": "土大力（郑州人民路店）",
+        "wmPoiScore": 49,
+        "monthSalesTip": "月售1000",
+        "picUrl": "http://p1.meituan.net/business/43339a8a1a2956438bfb5ff4f63b2171392461.png",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥3",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "1.4km",
+        "averagePriceTip": "人均 ¥41",
+        "recommendInfo": {
+          "icon": "",
+          "recommendReason": "大众点评高分店铺",
+          "type": 3
+        },
+        "discounts2": [
+          {
+            "info": "满50减5;满80减8;满100减10",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品7.69折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          },
+          {
+            "info": "本店支持开发票，开票金额0元起",
+            "iconUrl": "http://p0.meituan.net/xianfu/476ba65ee80b6385bab292c085baed17940.png",
+            "promotionType": 2,
+            "activityId": -2
+          }
+        ],
+        "address": "人民路2号丹尼斯2号馆1楼",
+        "shipping_time": "10:30-21:00"
+      },
+      {
+        "mtWmPoiId": "1040834993498886",
+        "shopName": "蜀味居毛血旺",
+        "wmPoiScore": 48,
+        "monthSalesTip": "月售3000",
+        "picUrl": "http://p1.meituan.net/waimaipoi/73b322cfa862f6d4ed3a3013a6685db545555.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥0",
+        "shippingFeeTip": "配送 ¥3",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "1.7km",
+        "averagePriceTip": "人均 ¥19",
+        "discounts2": [
+          {
+            "info": "满20减7;满42减10;满65减16;满85减25;满128减27",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品0.1折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          },
+          {
+            "info": "满88元赠送冰爽菠萝啤2瓶",
+            "iconUrl": "http://p0.meituan.net/activityconfig/dfb8be4fc2eb746ecbc4c1485dba635a1127.png",
+            "promotionType": 2,
+            "activityId": 5
+          }
+        ],
+        "address": "郑州市金水区工四街中学生学习报社底商8号",
+        "shipping_time": "06:33-23:59"
+      },
+      {
+        "mtWmPoiId": "1057791524343088",
+        "shopName": "老盒饭炖肉（二七店）",
+        "wmPoiScore": 47,
+        "monthSalesTip": "月售3000",
+        "picUrl": "http://p1.meituan.net/waimaipoi/5b746151fa4b7eea0dbcad76206a6894296450.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 0,
+        "minPriceTip": "起送 ¥15",
+        "shippingFeeTip": "配送 ¥2.5",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "877m",
+        "averagePriceTip": "人均 ¥19",
+        "discounts2": [
+          {
+            "info": "满20减7;满45减11;满65减16",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品3.58折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          },
+          {
+            "info": "领2元券",
+            "iconUrl": "http://p1.meituan.net/activityconfig/3fc360f1c726e7148380f4c77fa303fd1475.png",
+            "promotionType": 2,
+            "activityId": 103
+          },
+          {
+            "info": "实际支付50元返2元商家代金券",
+            "iconUrl": "http://p0.meituan.net/xianfu/652eea4034250563fe11b02e3219ba8d981.png",
+            "promotionType": 2,
+            "activityId": 100
+          },
+          {
+            "info": "本店支持开发票，开票金额0元起",
+            "iconUrl": "http://p0.meituan.net/xianfu/476ba65ee80b6385bab292c085baed17940.png",
+            "promotionType": 2,
+            "activityId": -2
+          }
+        ],
+        "address": "河南省郑州市二七区二马路62号B6号（乐客二楼）",
+        "shipping_time": "00:00-23:59"
+      },
+      {
+        "mtWmPoiId": "1086215617955877",
+        "shopName": "76人老烩面（德化街店）",
+        "wmPoiScore": 48,
+        "monthSalesTip": "月售900",
+        "picUrl": "http://p0.meituan.net/business/7659f92129742d0ad71f37a92a1d9bff134461.png",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥3",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "233m",
+        "averagePriceTip": "人均 ¥19",
+        "recommendInfo": {
+          "icon": "",
+          "recommendReason": "大众点评高分店铺",
+          "type": 3
+        },
+        "discounts2": [
+          {
+            "info": "满30减9;满55减15;满100减30",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品8.45折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          }
+        ],
+        "address": "郑州市二七区德化街5号（西大街与延陵街交叉口向南200m路西，粤海酒店楼下）",
+        "shipping_time": "09:30-22:30"
+      },
+      {
+        "mtWmPoiId": "942626271290893",
+        "shopName": "延庆观炸鸡（顺河路店）",
+        "wmPoiScore": 47,
+        "monthSalesTip": "月售900",
+        "picUrl": "http://p0.meituan.net/waimaipoi/413286401b3f347c3f498721281ade1348466.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥3.5",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "2.8km",
+        "averagePriceTip": "人均 ¥20",
+        "recommendInfo": {
+          "icon": "",
+          "recommendReason": "大众点评高分店铺",
+          "type": 3
+        },
+        "discounts2": [
+          {
+            "info": "满30减4;满50减6;满100减12",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          }
+        ],
+        "address": "郑州市顺河路黄河中心医院西200米左右",
+        "shipping_time": "09:45-22:30"
+      },
+      {
+        "mtWmPoiId": "1019433171440673",
+        "shopName": "阿利茄汁面（大石桥店）",
+        "wmPoiScore": 47,
+        "monthSalesTip": "月售2000",
+        "picUrl": "http://p1.meituan.net/waimaipoi/27b5fd756a4cee36a866c55e9c88c41b19959.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥4.5",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "2.7km",
+        "averagePriceTip": "人均 ¥23",
+        "discounts2": [
+          {
+            "info": "满35减5;满45减14",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品6.22折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          },
+          {
+            "info": "满38元赠送紫菜蛋花汤或红枣银耳粥",
+            "iconUrl": "http://p0.meituan.net/activityconfig/dfb8be4fc2eb746ecbc4c1485dba635a1127.png",
+            "promotionType": 2,
+            "activityId": 5
+          },
+          {
+            "info": "本店支持开发票，开票金额0元起",
+            "iconUrl": "http://p0.meituan.net/xianfu/476ba65ee80b6385bab292c085baed17940.png",
+            "promotionType": 2,
+            "activityId": -2
+          }
+        ],
+        "address": "郑州市金水区南阳路清华园SOHO广场A座一层",
+        "shipping_time": "08:20-23:20"
+      },
+      {
+        "mtWmPoiId": "1077084517447483",
+        "shopName": "CoCo都可(大学店)",
+        "wmPoiScore": 49,
+        "monthSalesTip": "月售4000",
+        "picUrl": "http://p0.meituan.net/waimaipoi/ed31c20e4fc3fb2a8ad99449354a6c3122344.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "35分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥25",
+        "shippingFeeTip": "配送 ¥5",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "3.7km",
+        "averagePriceTip": "人均 ¥16",
+        "recommendInfo": {
+          "icon": "",
+          "recommendReason": "大众点评高分店铺",
+          "type": 3
+        },
+        "discounts2": [
+          {
+            "info": "折扣商品7折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          },
+          {
+            "info": "本店支持开发票，开票金额0元起",
+            "iconUrl": "http://p0.meituan.net/xianfu/476ba65ee80b6385bab292c085baed17940.png",
+            "promotionType": 2,
+            "activityId": -2
+          }
+        ],
+        "address": "郑州市二七区大学路80号9号楼1层PS1040号（大学路陇海路交叉口向北100米，德克士与七天连锁酒店中间）",
+        "shipping_time": "09:15-22:15"
+      },
+      {
+        "mtWmPoiId": "1044429881105670",
+        "shopName": "牛堡芝王（二七店）",
+        "wmPoiScore": 48,
+        "monthSalesTip": "月售100",
+        "picUrl": "http://p0.meituan.net/waimaipoi/c382b743ba17b0ae3e0c3b149036780b106768.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 0,
+        "minPriceTip": "起送 ¥15",
+        "shippingFeeTip": "配送 ¥2.5",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "1.6km",
+        "averagePriceTip": "",
+        "discounts2": [
+          {
+            "info": "满25减21;满48减26;满70减40;满90减59",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品0.33折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          }
+        ],
+        "address": "河南省郑州市二七区西陈庄后街33号",
+        "shipping_time": "00:00-01:45,10:00-23:59"
+      },
+      {
+        "mtWmPoiId": "894376608698249",
+        "shopName": "阿生哥柳州螺蛳粉",
+        "wmPoiScore": 48,
+        "monthSalesTip": "月售4000",
+        "picUrl": "http://p1.meituan.net/waimaipoi/fd1d6fd9e28c17b6a80441db3a8a95ae298563.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥20",
+        "shippingFeeTip": "配送 ¥3",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "2.1km",
+        "averagePriceTip": "人均 ¥20",
+        "recommendInfo": {
+          "icon": "",
+          "recommendReason": "大众点评高分店铺",
+          "type": 3
+        },
+        "address": "郑州市金水区文化路与金水路交叉口向北100米路东",
+        "shipping_time": "11:00-21:30"
+      },
+      {
+        "mtWmPoiId": "1093031731024903",
+        "shopName": "外婆私房小碗菜（二七广场店）",
+        "wmPoiScore": 47,
+        "monthSalesTip": "月售7000",
+        "picUrl": "http://p0.meituan.net/waimaipoi/f15f944f01a4f291c305db8b3b684e1b56775.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 0,
+        "minPriceTip": "起送 ¥15",
+        "shippingFeeTip": "配送 ¥1.5",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "821m",
+        "averagePriceTip": "人均 ¥13",
+        "discounts2": [
+          {
+            "info": "满25减6;满38减10;满58减17;满88减21",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品0.36折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          },
+          {
+            "info": "领3元券;领6元券;领8元券",
+            "iconUrl": "http://p1.meituan.net/activityconfig/3fc360f1c726e7148380f4c77fa303fd1475.png",
+            "promotionType": 2,
+            "activityId": 103
+          },
+          {
+            "info": "实际支付6元返3元商家代金券",
+            "iconUrl": "http://p0.meituan.net/xianfu/652eea4034250563fe11b02e3219ba8d981.png",
+            "promotionType": 2,
+            "activityId": 100
+          }
+        ],
+        "address": "郑州市管城回族区弓背街24号院6号楼1层",
+        "shipping_time": "00:00-01:59,09:00-23:59"
+      },
+      {
+        "mtWmPoiId": "872953311793090",
+        "shopName": "傻子张大盘鸡(万象城店)",
+        "wmPoiScore": 47,
+        "monthSalesTip": "月售2000",
+        "picUrl": "http://p0.meituan.net/waimaipoi/a0c61bfffd8dc666dc629f45cb55b404148935.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 0,
+        "minPriceTip": "起送 ¥15",
+        "shippingFeeTip": "配送 ¥2.5",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "1.3km",
+        "averagePriceTip": "人均 ¥15",
+        "discounts2": [
+          {
+            "info": "满15减14;满40减18;满60减20;满80减22",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          },
+          {
+            "info": "折扣商品4.84折起",
+            "iconUrl": "http://p0.meituan.net/activityconfig/3da2d9c7a4ddf89e4e71cfdfff168c391088.png",
+            "promotionType": 2,
+            "activityId": 17
+          }
+        ],
+        "address": "郑州市二七区二道街252-12号",
+        "shipping_time": "10:20-23:55"
+      },
+      {
+        "mtWmPoiId": "985666138554726",
+        "shopName": "云南过桥米线（南学街店）",
+        "wmPoiScore": 47,
+        "monthSalesTip": "月售3000",
+        "picUrl": "http://p1.meituan.net/waimaipoi/190e3ef300d511520db1d11634b9e68d212992.jpg",
+        "poiTypeIcon": "",
+        "deliveryTimeTip": "30分钟",
+        "deliveryType": 1,
+        "minPriceTip": "起送 ¥15",
+        "shippingFeeTip": "配送 ¥3",
+        "origin_shipping_fee_tip": "",
+        "status": 1,
+        "statusDesc": "",
+        "distance": "1.4km",
+        "averagePriceTip": "人均 ¥15",
+        "discounts2": [
+          {
+            "info": "满20减16;满45减25;满85减42;满118减53",
+            "iconUrl": "http://p0.meituan.net/activityconfig/6087b33fd42d14fd94e899084aaef56d1720.png",
+            "promotionType": 2,
+            "activityId": 2
+          }
+        ],
+        "address": "郑州市管城回族区南大街88号",
+        "shipping_time": "00:01-01:00,09:30-23:59"
+      }
+    ],
+    "judasData": { "rankTraceId": "7C62560D94174E272FECEBC700CEFD15" }
+  },
+  "code": 0,
+  "msg": "成功"
+}

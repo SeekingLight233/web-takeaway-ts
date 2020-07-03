@@ -3,7 +3,7 @@
  */
 import "./Category.scss";
 import React, { useEffect } from "react";
-import { connect, ConnectedProps, Connect } from "react-redux";
+import { connect, ConnectedProps } from "react-redux";
 import { RootState } from "../../Models";
 
 const mapStateToProps = ({ cate }: RootState) => ({
@@ -35,7 +35,7 @@ const Category: React.FC<ModelState> = (props) => {
     });
   };
 
-  return <div className="category clearfix">{renderItems()}</div>;
+  return <div className="category">{renderItems()}</div>;
 };
 
 export default connect(mapStateToProps)(Category);

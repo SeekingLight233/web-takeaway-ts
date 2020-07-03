@@ -2,9 +2,9 @@
 .clearfix::after {
   content: "";
   visibility: hidden;
-  display: block;
+  display: block; // 默认是inline
   height: 0;
-  clear: both;
+  clear: both; //不允许有浮动元素
 }
 .scale-1px {
   position: relative;
