@@ -17,6 +17,7 @@ export interface Item {
     wmPoiScore: string | number,//评分
     monthSalesTip: string | number,//销量
     picUrl: string,
+    deliveryType: number,
     deliveryTimeTip: string | number//配送速度
     minPriceTip: string,
     shippingFeeTip: string

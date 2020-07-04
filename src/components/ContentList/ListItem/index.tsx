@@ -1,9 +1,10 @@
 /**
  * @description 单个商家列表
  */
-import React from "react";
+import React, { useState } from "react";
 import "./ListItem.scss";
 import { Item } from "../../../Models/contentList";
+import classNames from "classnames";
 
 const ListItem: React.FC<Item> = (props) => {
   const {
@@ -18,23 +19,30 @@ const ListItem: React.FC<Item> = (props) => {
     averagePriceTip,
     discounts2,
     recommendInfo,
+    deliveryType,
   } = props;
 
   const starScore = (wmPoiScore as number) / 10;
+  const [discount, setDiscount] = useState(false); // 控制折扣信息显示与隐藏
 
+  /**
+   * @description 渲染优惠信息
+   */
   const renderDiscount = () => {
     return discounts2.map((item, index) => {
       return (
-        <p key={index}>
-          <img src={item.iconUrl} alt="" />
-          <span>{item.info}</span>
+        <p key={index} className="discount-wrap">
+          <div className="discount-wrap-item">
+            <img src={item.iconUrl} alt="" />
+            <span>{item.info}</span>
+          </div>
         </p>
       );
     });
   };
 
   const renderKm = () => {
-    return <span>{(distance as number) / 1000 + "km"}</span>;
+    return <>{(distance as number) / 1000 + "km"}</>;
   };
   /**
    * @description 渲染那几颗小星星~~
@@ -51,6 +59,12 @@ const ListItem: React.FC<Item> = (props) => {
     }
     return stars;
   };
+  /**
+   * @description 控制折扣信息开关
+   */
+  const toggleDiscounts = () => {
+    setDiscount(!discount);
+  };
   return (
     <div className="list-item">
       <div className="left-item">
@@ -61,20 +75,44 @@ const ListItem: React.FC<Item> = (props) => {
         <div className="item-desc ">
           <span className="item-sales">
             {renderStar()}
-            {starScore}
+            <span className="star-score">{starScore}</span>
             {"月售" + monthSalesTip}
           </span>
           <span className="item-delivery">
-            {deliveryTimeTip} |{distance > 1000 ? renderKm() : distance + "m"}
+            <span>{deliveryTimeTip}分钟</span>
+            <span className="item-distance">
+              {distance > 1000 ? renderKm() : distance + "m"}
+            </span>
           </span>
         </div>
-        <div className="item-price">{minPriceTip}</div>
+        <div className="item-price">
+          <span className="item-price-detail">{minPriceTip}</span>
+          <span className="item-price-detail">{shippingFeeTip}</span>
+          <span className="item-price-detail">{averagePriceTip}</span>
+          {deliveryType === 1 ? <span className="meituan-tag"></span> : null}
+        </div>
         <div className="item-recommend">
           {recommendInfo ? <span>大众点评高分店铺</span> : null}
         </div>
-        <div className="item-discount">
-          {discounts2 ? renderDiscount() : null}
-        </div>
+
+        {discounts2 ? (
+          <div
+            className={classNames("discount-content", { toggle: discount })}
+            onClick={() => {
+              if (discounts2.length >= 3) {
+                toggleDiscounts();
+              }
+            }}
+          >
+            <span
+              className={classNames("discount-arrow-up", {
+                "arrow-down": discount,
+                "hidden-arrow": discounts2.length < 3,
+              })}
+            ></span>
+            {renderDiscount()}
+          </div>
+        ) : null}
       </div>
     </div>
   );

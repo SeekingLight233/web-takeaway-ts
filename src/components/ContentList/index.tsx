@@ -33,11 +33,7 @@ const ContentList: React.FC<ModelState> = (props) => {
   };
   return (
     <div className="content-list">
-      <h4 className="list-title">
-        <span className="title-line"></span>
-        <span>附近商家</span>
-        <span className="title-line"></span>
-      </h4>
+      <div className="list-title">附近商家</div>
 
       {renderShopList()}
     </div>
