@@ -1,3 +1,6 @@
+/**
+ * @description 商家列表 数据模型
+ */
 import { Effect, Model } from 'dva-core-ts'
 import { Reducer } from 'redux'
 import axios from 'axios'
@@ -43,21 +46,45 @@ interface ContentListModel extends Model {
     }
 }
 
+
 const initState: ContentListState = {
     items: [],
 }
+
+/**
+ * @description 延迟1s模拟网络请求
+ */
+const fetchData = (pageNum: number): Promise<Array<Item>> => {
+    return new Promise((resolve, reject) => {
+        setTimeout(async () => {
+            const res: Array<Item> = await axios.get(`./data/list${pageNum}.json`);
+            resolve(res);
+        }, 1000);
+    });
+};
 
 const ContentListModel: ContentListModel = {
     namespace: "contentList",
     state: initState,
     reducers: {
         setState(state = initState, { payload }): ContentListState {
-            return { ...state, ...payload }
+            // return { ...state, ...payload }
+            const { items } = state
+            const newItems = payload.items
+            return { items: items.concat(newItems) }
         }
     },
     effects: {
-        *getContentList(_, { call, put }) {
-            const { data } = yield call(axios.get, "./data/list.json")
+        /**
+         * @description 请求后端数据
+         */
+        *getContentList({ payload }, { call, put }) {
+            let { pageNum } = payload;
+            /* 这里的请求只是简单的模拟啦～～
+            *  真实的情况肯定是会用post请求把页码发到后端
+            */
+            if (pageNum > 1) pageNum = 1
+            const { data } = yield call(fetchData, pageNum)
             const contentListData = data.shopList
             const resolveListData = ResolveListData(contentListData)
             console.log(resolveListData);
@@ -68,6 +95,7 @@ const ContentListModel: ContentListModel = {
                     items: resolveListData
                 }
             })
+
         }
     }
 }

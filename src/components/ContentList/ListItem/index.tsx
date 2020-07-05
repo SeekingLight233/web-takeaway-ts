@@ -31,12 +31,12 @@ const ListItem: React.FC<Item> = (props) => {
   const renderDiscount = () => {
     return discounts2.map((item, index) => {
       return (
-        <p key={index} className="discount-wrap">
+        <span key={index} className="discount-wrap">
           <div className="discount-wrap-item">
             <img src={item.iconUrl} alt="" />
             <span>{item.info}</span>
           </div>
-        </p>
+        </span>
       );
     });
   };

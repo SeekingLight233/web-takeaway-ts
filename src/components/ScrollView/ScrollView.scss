@@ -1,0 +1,10 @@
+.text-wrap {
+  display: flex;
+  .loading-finish {
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    margin: auto;
+    transform: translateY(-10px);
+  }
+}

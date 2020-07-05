@@ -1,0 +1,36 @@
+.loading-circle {
+  position: relative;
+  width: 375px;
+  height: 30px;
+  font-size: 11px;
+  color: #333;
+  display: flex;
+  .loading-wrap {
+    margin: 0 auto;
+    background: #fff;
+    padding-bottom: 10px;
+  }
+  .circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    margin-right: 10px;
+    background-image: url("./img/circle.png");
+    animation: run 1.2s infinite linear;
+    @keyframes run {
+      0% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .loading-text {
+    vertical-align: 5px;
+  }
+}

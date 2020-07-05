@@ -17,3 +17,17 @@ export const ResolveListData = (Items: Array<Item>) => {
     })
     return ResolveList
 }
+/**
+ * @description 手动封装防抖函数
+ */
+export const debounce = (fn, delay: number) => {
+    let timer = null;
+    return function () {
+        if (timer) {
+            clearTimeout(timer)
+        }
+        timer = setTimeout(function () {
+            fn.apply(this, arguments)
+        }, delay);
+    }
+}
