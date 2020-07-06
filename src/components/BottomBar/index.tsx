@@ -7,6 +7,7 @@ import { connect, ConnectedProps } from "react-redux";
 import { RootState } from "../../Models";
 // import tabModel from "../models/tab";
 import classNames from "classnames";
+import { NavLink, HashRouter } from "react-router-dom";
 
 // 属性穿透
 const mapStateToProps = ({ tab }: RootState) => ({
@@ -30,14 +31,19 @@ const BottomBar: React.FC<ModelState> = (props) => {
   }, []);
   const renderItems = () => {
     return tabs.map((item, index) => {
-      const cls = classNames(item.key, "btn-item", {
-        active: item.key === activeKey,
-      });
+      const cls = classNames(item.key, "btn-item");
       return (
-        <div key={index} className={cls} onClick={() => changeTab(item.key)}>
-          <div className="tab-icon"></div>
-          <div className="btn-name">{item.name}</div>
-        </div>
+        <HashRouter key={index}>
+          <NavLink
+            className={cls}
+            to={`/${item.key}`}
+            replace={true}
+            activeClassName="active"
+          >
+            <div className="tab-icon"></div>
+            <div className="btn-name">{item.name}</div>
+          </NavLink>
+        </HashRouter>
       );
     });
   };
