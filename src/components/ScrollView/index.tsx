@@ -27,6 +27,10 @@ const ScrollView: React.FC<IProps> = (props) => {
       loadCallBack();
     }
   };
+
+  /**
+   * @description 组件初始化时绑定自定义事件
+   */
   useEffect(() => {
     window.addEventListener("scroll", debounce(onLoadPage, 500));
     return () => {

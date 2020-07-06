@@ -17,9 +17,13 @@ type ModelState = ConnectedProps<typeof connector>;
 
 const ContentList: React.FC<ModelState> = (props) => {
   const { items, dispatch } = props;
-  let page = 0;
+  const [page, setPage] = useState(0);
+  const [end, setEnd] = useState(false);
+
+  /**
+   * @description 请求数据
+   */
   const fetchData = (pageNum) => {
-    console.log(pageNum);
     dispatch({
       type: "contentList/getContentList",
       payload: {
@@ -27,9 +31,21 @@ const ContentList: React.FC<ModelState> = (props) => {
       },
     });
   };
+
+  /**
+   * @description 监听页码变化
+   */
   useEffect(() => {
-    fetchData(0);
-  }, []);
+    if (page < 3) {
+      fetchData(page);
+    } else {
+      setEnd(true);
+    }
+  }, [page]);
+
+  /**
+   * @description 渲染商家列表
+   */
   const renderShopList = () => {
     return items.map((item, index) => {
       return (
@@ -44,9 +60,9 @@ const ContentList: React.FC<ModelState> = (props) => {
     <div className="content-list">
       <div className="list-title">附近商家</div>
       <ScrollView
-        isEnd={false}
+        isEnd={end}
         loadCallBack={() => {
-          fetchData(++page);
+          setPage((page) => page + 1);
         }}
       >
         {renderShopList()}
