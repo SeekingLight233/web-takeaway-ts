@@ -42,7 +42,6 @@ const CateModel: CateModel = {
         *getCateList(_, { call, put }) {
             const { data } = yield call(axios.get, "./data/head.json")
             const cateData = data.kingkongList.slice(0, 10)
-            console.log(cateData);
             yield put({
                 type: "setState",
                 payload: {

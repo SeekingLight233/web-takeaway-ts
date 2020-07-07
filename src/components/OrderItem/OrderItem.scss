@@ -1,0 +1,135 @@
+.order-item {
+  position: relative;
+  background-color: #fff;
+  padding-left: 15px;
+  border-top: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+  margin-top: 10px;
+  &:first-child {
+    margin-top: 0;
+  }
+  .header-item {
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    &::after {
+      border-top: 1px solid #d7d7d7;
+      content: " ";
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      transform: scaleY(0.5);
+      bottom: 0;
+    }
+    .icon {
+      margin-right: 10px;
+      width: 35px;
+      height: 35px;
+      img {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+      }
+    }
+    .header {
+      font-size: 16px;
+      color: #323232;
+      flex: 1;
+      padding: 5px 0 5px 0px;
+      white-space: nowrap;
+      .text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        max-width: 200px;
+        vertical-align: middle;
+        &::after {
+          border: #999 solid 2px;
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          margin-top: -5px;
+          display: block;
+          content: "";
+          width: 8px;
+          height: 8px;
+          border-top: none;
+          border-right: none;
+          transform: rotate(225deg);
+        }
+      }
+    }
+  }
+
+  .details-items {
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8em;
+    padding-right: 14px;
+    color: black;
+    font-size: 14px;
+    &::after {
+      border-top: 1px solid #d7d7d7;
+      content: " ";
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      transform: scaleY(0.5);
+      bottom: 0;
+    }
+    .count {
+      float: right;
+    }
+    .time-wrap {
+      font-size: 12px;
+      color: #999;
+      .total-price {
+        font-size: 14px;
+        color: black;
+        float: right;
+      }
+    }
+  }
+
+  .footer-item {
+    position: relative;
+    line-height: 27px;
+    padding: 10px 0 10px 0px;
+    height: 27px;
+    .text {
+      color: #999;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .buttons {
+      margin-right: 15px;
+      float: right;
+      font-size: 14px;
+    }
+    .re-order {
+      display: inline-block;
+      color: #333;
+      border: solid 1px #ffd161;
+      padding: 0 10px;
+      margin-left: 14px;
+      border-radius: 3px;
+      text-align: center;
+      background-color: #ffd161;
+    }
+    .delete {
+      display: inline-block;
+      width: 50px;
+      height: 28px;
+      border: 1px solid #ddd;
+      text-align: center;
+      color: #333;
+      line-height: 27px;
+      border-radius: 3px;
+    }
+  }
+}

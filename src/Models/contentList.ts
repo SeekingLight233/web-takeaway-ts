@@ -87,7 +87,6 @@ const ContentListModel: ContentListModel = {
             const { data } = yield call(fetchData, pageNum)
             const contentListData = data.shopList
             const resolveListData = ResolveListData(contentListData)
-            console.log(resolveListData);
 
             yield put({
                 type: "setState",
