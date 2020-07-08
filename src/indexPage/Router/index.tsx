@@ -8,7 +8,7 @@ const Index: React.FC = () => {
   return (
     <div className="index">
       <HashRouter>
-        <Redirect to="/order" from="/" />
+        <Redirect to="/home" from="/" />
         <Route path="/home" component={Home} />
         <Route path="/order" component={Order} />
       </HashRouter>

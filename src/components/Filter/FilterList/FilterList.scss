@@ -1,0 +1,105 @@
+.filter-list {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
+  height: 400px;
+  display: none;
+  &.show {
+    display: inline-block;
+  }
+  .filter-wrap {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: auto;
+    .filter-inner {
+      position: relative;
+      padding: 15px 0 5px 15px;
+      font-size: 12px;
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      ul::after {
+        content: " ";
+        width: 100%;
+        height: 1px;
+        background: #e4e4e4;
+        transform-origin: 0 0;
+        transform: scaleY(0.5);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      .group-title {
+        margin-bottom: 10px;
+        color: #999;
+      }
+      .filter-tag {
+        .inner-icon {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-size: cover;
+          vertical-align: middle;
+          margin: -4px 2px 0 0;
+        }
+        width: 29.16%;
+        height: 30px;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 1px;
+        text-align: center;
+        line-height: 30px;
+        display: inline-block;
+        margin-right: 4.16%;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        transform: translateY(-2px);
+      }
+      .discount {
+        display: inline-block;
+        width: 178px;
+        height: 30px;
+        margin-right: 0;
+        text-align: left;
+        border: none;
+        img {
+          width: 15px;
+          height: 15px;
+          vertical-align: middle;
+          margin: -2px 5px 0 0;
+        }
+      }
+    }
+  }
+
+  .filter-buttons {
+    width: 100%;
+    height: 50px;
+    font-size: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    .clear-button {
+      background-color: #fff;
+      display: inline-block;
+      width: 50%;
+      font-size: 16px;
+      color: #333;
+      line-height: 50px;
+      text-align: center;
+    }
+    .close-button {
+      background-color: #ffd161;
+      display: inline-block;
+      width: 50%;
+      font-size: 16px;
+      color: #333;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
+}

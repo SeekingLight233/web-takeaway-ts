@@ -24,7 +24,7 @@ export interface Item {
     deliveryTimeTip: string | number//配送速度
     minPriceTip: string,
     shippingFeeTip: string
-    distance: string | number,//距离
+    distance: string | number,//距离    
     averagePriceTip: string,
     discounts2?: Discount[] //折扣信息
     recommendInfo?: Recommend[]

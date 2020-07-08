@@ -7,6 +7,7 @@ import { connect, ConnectedProps } from "react-redux";
 import { RootState } from "../../Models";
 import ListItem from "./ListItem";
 import ScrollView from "../ScrollView";
+import Filter from "../Filter";
 
 const mapStateToProps = ({ contentList }: RootState) => ({
   items: contentList.items,
@@ -65,6 +66,7 @@ const ContentList: React.FC<ModelState> = (props) => {
           setPage((page) => page + 1);
         }}
       >
+        <Filter></Filter>
         {renderShopList()}
       </ScrollView>
     </div>

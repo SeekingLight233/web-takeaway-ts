@@ -1,8 +1,8 @@
 .search-bar {
-  display: fixed;
+  position: fixed;
   left: 0;
   top: 0;
-  z-index: 9;
+  z-index: 15;
   width: 100%;
   height: 50px;
   background-color: #1c1b20;
