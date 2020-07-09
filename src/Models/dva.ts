@@ -1,7 +1,7 @@
 import { create } from 'dva-core-ts'
 import models from './index';
 import createLoading from 'dva-loading-ts'
-import "./httpConfig"
+import "../httpConfig"
 // 1.创建实例
 const app = create();
 

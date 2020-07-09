@@ -48,7 +48,7 @@ const ListItem: React.FC<Item> = (props) => {
    * @description 渲染那几颗小星星~~
    */
   const renderStar = () => {
-    let stars = [];
+    const stars = [];
     const score = Math.ceil(starScore);
     for (let i = 0; i <= 5; i++) {
       if (i < score) {

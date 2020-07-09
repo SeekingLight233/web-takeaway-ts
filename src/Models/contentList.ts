@@ -5,6 +5,7 @@ import { Effect, Model } from 'dva-core-ts'
 import { Reducer } from 'redux'
 import axios from 'axios'
 import { ResolveListData } from '../utils/homeUtils'
+import { cloneDeep } from "lodash"
 
 interface Discount {
     info: string,
@@ -43,10 +44,10 @@ interface ContentListModel extends Model {
     },
     effects: {
         getContentList: Effect,
-        // getFastList: Effect,
-        // getRateList: Effect,
-        // getSalesList: Effect,
-        // getDistanceList:Effect
+        getFastList: Effect,
+        getRateList: Effect,
+        getSalesList: Effect,
+        getDistanceList: Effect
     }
 }
 
@@ -99,37 +100,75 @@ const ContentListModel: ContentListModel = {
                 }
             })
         },
-
-        // /**
-        //  * @description 速度最快
-        //  */
-        // *getFastList({_},{call,put}) { 
-        //     const FastList = [];
-        //     yield put({
-        //         type: "setState",
-        //         payload: {
-        //             items: FastList
-        //         }
-        //     })
-        // },
-        // /**
-        //  * @description 评分最好
-        //  */
-        // *getRateList({_},{call,put}) { 
-
-        // },
-        // /**
-        //  * @description 销量最高
-        //  */
-        // *getSalesList({_},{call,put}) { 
-
-        // },
-        // /**
-        //  * @description 距离最近
-        //  */
-        // *getSalesList({_},{call,put}) { 
-
-        // }
+        // 这里没有合并逻辑主要是为了模拟业务场景，想合并的话可以通过payload传个type过来
+        /**
+         * @description 速度最快
+         */
+        *getFastList({ _ }, { call, put, select }) {
+            const state = yield select(state => state)
+            const originItem = state.contentList.items;
+            const newItem = cloneDeep(originItem)
+            newItem.sort((a, b) => {
+                return a.deliveryTimeTip - b.deliveryTimeTip
+            })
+            yield put({
+                type: "setState",
+                payload: {
+                    items: newItem
+                }
+            })
+        },
+        /**
+         * @description 评分最好
+         */
+        *getRateList({ _ }, { call, put, select }) {
+            const state = yield select(state => state)
+            const originItem = state.contentList.items;
+            const newItem = cloneDeep(originItem)
+            newItem.sort((a, b) => {
+                return b.wmPoiScore - a.wmPoiScore
+            })
+            yield put({
+                type: "setState",
+                payload: {
+                    items: newItem
+                }
+            })
+        },
+        /**
+         * @description 销量最高
+         */
+        *getSalesList({ _ }, { call, put, select }) {
+            const state = yield select(state => state)
+            const originItem = state.contentList.items;
+            const newItem = cloneDeep(originItem)
+            newItem.sort((a, b) => {
+                return b.monthSalesTip - a.monthSalesTip
+            })
+            yield put({
+                type: "setState",
+                payload: {
+                    items: newItem
+                }
+            })
+        },
+        /**
+         * @description 距离最近
+         */
+        *getDistanceList({ _ }, { call, put, select }) {
+            const state = yield select(state => state)
+            const originItem = state.contentList.items;
+            const newItem = cloneDeep(originItem)
+            newItem.sort((a, b) => {
+                return a.distance - b.distance
+            })
+            yield put({
+                type: "setState",
+                payload: {
+                    items: newItem
+                }
+            })
+        }
     }
 }
 export default ContentListModel

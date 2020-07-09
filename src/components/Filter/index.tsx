@@ -6,15 +6,14 @@ import "./Filter.scss";
 import classNames from "classnames";
 import { scrollTop } from "../../utils/homeUtils";
 import FilterList from "./FilterList";
-
-// mock
-const sortArrs = ["综合排序", "速度最快", "评分最好", "销量最高", "距离最近"];
+import store from "../../Models/dva";
 
 const Filter: React.FC = () => {
   const [sticky, setSticky] = useState(false); //Filter栏是否吸顶
   const [orderSpread, setOrderSpread] = useState(false); // “综合排序”的展开状态
   const [filterSpread, setFilterSpread] = useState(false); // 筛选栏的展开状态
   const [active, setActive] = useState(""); // “销量最高”和“距离最近"的点击状态
+  const [sortText, setSortText] = useState("综合排序");
 
   /**
    * @description 滚动吸顶
@@ -36,29 +35,74 @@ const Filter: React.FC = () => {
   }, []);
 
   /**
-   * @description 渲染排序依据
+   * @description 点击筛选栏的默认行为
    */
-  const renderSortArr = () => {
-    return sortArrs.map((item, index) => {
-      return <li key={index}>{item}</li>;
-    });
+  const defaultAction = (newSortText, newActive) => {
+    setOrderSpread((orderSpread) => false);
+    setFilterSpread((filterSpread) => false);
+    scrollTop();
+    setSortText((sortText) => newSortText);
+    setActive((active) => newActive);
   };
+
   /**
    * @description 根据销量排序
    */
-  const orderBySales = () => {
-    scrollTop();
-    setActive((active) => "sales");
+  const sortBySales = () => {
+    defaultAction("销量最高", "sales");
+    store.dispatch({
+      type: "contentList/getSalesList",
+    });
   };
 
   /**
    * @description 根据距离排序
    */
-  const orderByDistance = () => {
-    scrollTop();
-    setActive((active) => "distance");
+  const sortByDistance = () => {
+    defaultAction("距离最近", "distance");
+    store.dispatch({
+      type: "contentList/getDistanceList",
+    });
+  };
+  /**
+   * @description 根据速度排序
+   */
+  const sortBySpeed = () => {
+    defaultAction("速度最快", "");
+    store.dispatch({
+      type: "contentList/getFastList",
+    });
   };
 
+  /**
+   * @description 根据评分排序
+   */
+  const sortByRate = () => {
+    defaultAction("评分最高", "");
+    store.dispatch({
+      type: "contentList/getRateList",
+    });
+  };
+
+  /**
+   * @description 渲染排序依据
+   */
+  const renderSortArr = () => {
+    return [
+      <li key="speed" onClick={sortBySpeed}>
+        速度最快
+      </li>,
+      <li key="rate" onClick={sortByRate}>
+        评分最好
+      </li>,
+      <li key="sales" onClick={sortBySales}>
+        销量最高
+      </li>,
+      <li key="distance" onClick={sortByDistance}>
+        距离最近
+      </li>,
+    ];
+  };
   return (
     <div
       className={classNames(
@@ -72,18 +116,18 @@ const Filter: React.FC = () => {
           <li
             className={classNames("sort", { orderSpread })}
             onClick={() => {
-              if (!filterSpread) {
-                setOrderSpread((orderSpread) => !orderSpread);
-                scrollTop();
-              }
+              setFilterSpread((filterSpread) => false);
+              scrollTop();
+              setOrderSpread((orderSpread) => !orderSpread);
             }}
           >
-            综合排序<i></i>
+            {sortText}
+            <i></i>
           </li>
 
           <li
             className={classNames("sales", { active: active === "sales" })}
-            onClick={orderBySales}
+            onClick={sortBySales}
           >
             销量最高
           </li>
@@ -91,7 +135,7 @@ const Filter: React.FC = () => {
             className={classNames("distance", {
               active: active === "distance",
             })}
-            onClick={orderByDistance}
+            onClick={sortByDistance}
           >
             距离最近
           </li>

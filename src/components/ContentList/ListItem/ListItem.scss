@@ -6,11 +6,12 @@
   margin-bottom: 25px;
   margin-top: 10px;
   .left-item {
-    width: 76px;
-    height: 57px;
     margin-right: 8px;
     .item-img {
       width: 100%;
+      width: 76px;
+      height: 57px;
+      border-radius: 3px;
     }
   }
   .right-item {
@@ -57,7 +58,7 @@
       }
       .item-delivery {
         text-align: right;
-        flex: 1;
+        width: 136px;
       }
       .item-distance::before {
         content: "";
