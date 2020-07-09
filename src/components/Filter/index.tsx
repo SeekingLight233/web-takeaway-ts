@@ -1,7 +1,7 @@
 /**
  * @description ContentList中的筛选框
  */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Filter.scss";
 import classNames from "classnames";
 import { scrollTop } from "../../utils/homeUtils";
@@ -11,9 +11,30 @@ import FilterList from "./FilterList";
 const sortArrs = ["综合排序", "速度最快", "评分最好", "销量最高", "距离最近"];
 
 const Filter: React.FC = () => {
+  const [sticky, setSticky] = useState(false); //Filter栏是否吸顶
   const [orderSpread, setOrderSpread] = useState(false); // “综合排序”的展开状态
   const [filterSpread, setFilterSpread] = useState(false); // 筛选栏的展开状态
   const [active, setActive] = useState(""); // “销量最高”和“距离最近"的点击状态
+
+  /**
+   * @description 滚动吸顶
+   */
+  const stickTop = () => {
+    const scrollHeight = document.documentElement.scrollTop;
+    if (scrollHeight > 195 && sticky === false) {
+      // 如果不加上后面的条件会造成很大的性能开销
+      setSticky((sticky) => true);
+    } else {
+      setSticky((sticky) => false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", stickTop);
+    return () => {
+      window.removeEventListener("scroll", stickTop);
+    };
+  }, []);
+
   /**
    * @description 渲染排序依据
    */
@@ -39,7 +60,13 @@ const Filter: React.FC = () => {
   };
 
   return (
-    <div className={classNames("filter", { fixed: orderSpread })}>
+    <div
+      className={classNames(
+        "filter",
+        { fixed: orderSpread },
+        { "stick-top": sticky }
+      )}
+    >
       <div className="filter-wrap">
         <ul className="filter-ul">
           <li
