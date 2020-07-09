@@ -42,7 +42,11 @@ interface ContentListModel extends Model {
         setState: Reducer<ContentListState>
     },
     effects: {
-        getContentList: Effect
+        getContentList: Effect,
+        // getFastList: Effect,
+        // getRateList: Effect,
+        // getSalesList: Effect,
+        // getDistanceList:Effect
     }
 }
 
@@ -68,34 +72,64 @@ const ContentListModel: ContentListModel = {
     state: initState,
     reducers: {
         setState(state = initState, { payload }): ContentListState {
-            // return { ...state, ...payload }
-            const { items } = state
-            const newItems = payload.items
-            return { items: items.concat(newItems) }
+            return { ...state, ...payload }
         }
     },
     effects: {
         /**
          * @description 请求后端数据
          */
-        *getContentList({ payload }, { call, put }) {
+        *getContentList({ payload }, { call, put, select }) {
             let { pageNum } = payload;
-            /* 这里的请求只是简单的模拟啦～～
+            /* 以下的请求只是简单的模拟啦～～
             *  真实的情况肯定是会用post请求把页码发到后端
             */
             if (pageNum > 1) pageNum = 1
             const { data } = yield call(fetchData, pageNum)
             const contentListData = data.shopList
             const resolveListData = ResolveListData(contentListData)
+            // 拼接原数据
+            const state = yield select(state => state)
+            const originItem: Item[] = state.contentList.items;
 
             yield put({
                 type: "setState",
                 payload: {
-                    items: resolveListData
+                    items: originItem.concat(resolveListData)
                 }
             })
+        },
 
-        }
+        // /**
+        //  * @description 速度最快
+        //  */
+        // *getFastList({_},{call,put}) { 
+        //     const FastList = [];
+        //     yield put({
+        //         type: "setState",
+        //         payload: {
+        //             items: FastList
+        //         }
+        //     })
+        // },
+        // /**
+        //  * @description 评分最好
+        //  */
+        // *getRateList({_},{call,put}) { 
+
+        // },
+        // /**
+        //  * @description 销量最高
+        //  */
+        // *getSalesList({_},{call,put}) { 
+
+        // },
+        // /**
+        //  * @description 距离最近
+        //  */
+        // *getSalesList({_},{call,put}) { 
+
+        // }
     }
 }
 export default ContentListModel
