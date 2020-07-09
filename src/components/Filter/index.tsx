@@ -85,6 +85,7 @@ const Filter: React.FC = () => {
         </div>
         <FilterList show={filterSpread}></FilterList>
       </div>
+      <div className={classNames({ mask: orderSpread || filterSpread })}></div>
     </div>
   );
 };
