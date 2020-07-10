@@ -4,29 +4,35 @@
 import { Effect, Model } from 'dva-core-ts'
 import { Reducer } from 'redux'
 import axios from 'axios'
+import { resolveFilterData } from '../utils/homeUtils';
+import { cloneDeep } from "lodash"
 
 
-export interface IFilterItemList {
+export interface IFilterItem {
     name: string,
-    icon: string
+    icon: string,
+    active: boolean
 }
 
 export interface IFilter {
     isSupportMultiChoice: number,
     groupTitle: string,
-    filterItemList: IFilterItemList[]
+    filterItemList: IFilterItem[]
 }
 
 
 export interface FilterListState {
-    items: IFilter[]
+    items: IFilter[],
+    count: number
 }
 
 interface FilterListModel extends Model {
     namespace: 'filterList',
     state: FilterListState,
     reducers: {
-        setState: Reducer<FilterListState>
+        setState: Reducer<FilterListState>,
+        setActive: Reducer<FilterListState>,
+        clearActive: Reducer<FilterListState>
     },
     effects: {
         getFilterList: Effect
@@ -34,7 +40,8 @@ interface FilterListModel extends Model {
 }
 
 const initState: FilterListState = {
-    items: []
+    items: [],
+    count: 0
 }
 
 /**
@@ -55,9 +62,44 @@ const FilterListModel: FilterListModel = {
     state: initState,
     reducers: {
         setState(state = initState, { payload }): FilterListState {
-            const { items } = state
-            const newItems = payload.items
-            return { items: newItems }
+            return { ...state, ...payload }
+        },
+        /**
+         * @description 改变筛选tag的激活状态
+         */
+        setActive(state = initState, { payload }) {
+            const { row, index } = payload
+            const newState = cloneDeep(state)
+            const filterItemList = newState.items[row].filterItemList;
+
+            // 最后两行只能单选
+            if (row >= 2) {
+                if (filterItemList.every((val) => val.active === false)) {
+                    newState.count++
+                }
+                for (const item of filterItemList) {
+                    item.active = false
+                }
+                filterItemList[index].active = true
+            } else {
+                // 改变状态前先更新count,单选不用更新
+                filterItemList[index].active === false ? newState.count++ : newState.count--;
+                filterItemList[index].active = !filterItemList[index].active
+            }
+            return { ...newState }
+        },
+        /**
+         * @description 清楚tag的激活态
+         */
+        clearActive(state = initState) {
+            const newState = cloneDeep(state)
+            for (const row of newState.items) {
+                for (const item of row.filterItemList) {
+                    item.active = false
+                }
+            }
+            newState.count = 0
+            return { ...newState }
         }
     },
     effects: {
@@ -67,14 +109,12 @@ const FilterListModel: FilterListModel = {
         *getFilterList({ payload }, { call, put }) {
             const { data } = yield call(fetchData)
             const fetchList = data.multifilterVOList;
-            console.log(fetchList);
             yield put({
                 type: "setState",
                 payload: {
-                    items: fetchList
+                    items: resolveFilterData(fetchList)
                 }
             })
-
         }
     }
 }

@@ -58,14 +58,24 @@
         margin-bottom: 10px;
         box-sizing: border-box;
         transform: translateY(-2px);
+        &.active {
+          color: #ffd161;
+          border-color: #ffd161;
+          font-weight: bold;
+          background-color: #fffbf1;
+        }
       }
       .discount {
         display: inline-block;
-        width: 178px;
+        width: 50%;
         height: 30px;
         margin-right: 0;
         text-align: left;
         border: none;
+        &.active {
+          color: #ffd161;
+          font-weight: bold;
+        }
         img {
           width: 15px;
           height: 15px;
@@ -100,6 +110,18 @@
       color: #333;
       line-height: 50px;
       text-align: center;
+      i {
+        display: inline-block;
+        font-size: normal;
+        width: 15px;
+        line-height: 15px;
+        border-radius: 50%;
+        background-color: #000;
+        color: #ffd161;
+        font-size: 11px;
+        vertical-align: middle;
+        margin: -2px 0 0 2px;
+      }
     }
   }
 }

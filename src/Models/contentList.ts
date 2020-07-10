@@ -4,7 +4,7 @@
 import { Effect, Model } from 'dva-core-ts'
 import { Reducer } from 'redux'
 import axios from 'axios'
-import { ResolveListData } from '../utils/homeUtils'
+import { resolveListData } from '../utils/homeUtils'
 import { cloneDeep } from "lodash"
 
 interface Discount {
@@ -47,7 +47,8 @@ interface ContentListModel extends Model {
         getFastList: Effect,
         getRateList: Effect,
         getSalesList: Effect,
-        getDistanceList: Effect
+        getDistanceList: Effect,
+        getFilterList: Effect
     }
 }
 
@@ -88,7 +89,7 @@ const ContentListModel: ContentListModel = {
             if (pageNum > 1) pageNum = 1
             const { data } = yield call(fetchData, pageNum)
             const contentListData = data.shopList
-            const resolveListData = ResolveListData(contentListData)
+            const resolveList = resolveListData(contentListData)
             // 拼接原数据
             const state = yield select(state => state)
             const originItem: Item[] = state.contentList.items;
@@ -96,7 +97,7 @@ const ContentListModel: ContentListModel = {
             yield put({
                 type: "setState",
                 payload: {
-                    items: originItem.concat(resolveListData)
+                    items: originItem.concat(resolveList)
                 }
             })
         },
@@ -166,6 +167,19 @@ const ContentListModel: ContentListModel = {
                 type: "setState",
                 payload: {
                     items: newItem
+                }
+            })
+        },
+        // mock filter result
+        *getFilterList({ _ }, { call, put, select }) {
+            const state = yield select(state => state)
+            const originContentList: ContentListState = state.contentList;
+            // const newContentList = cloneDeep(originContentList)
+            const res = originContentList.items.filter((item) => item.deliveryType === 1)
+            yield put({
+                type: "setState",
+                payload: {
+                    items: res
                 }
             })
         }

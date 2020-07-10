@@ -56,7 +56,7 @@
         "type": 2
       },
       {
-        "isSupportMultiChoice": 1,
+        "isSupportMultiChoice": 0,
         "groupTitle": "人均价",
         "filterItemList": [
           {

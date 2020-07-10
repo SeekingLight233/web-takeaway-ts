@@ -84,6 +84,9 @@ const Filter: React.FC = () => {
     });
   };
 
+  const toggleShow = () => {
+    setFilterSpread((filterSpread) => false);
+  };
   /**
    * @description 渲染排序依据
    */
@@ -154,7 +157,7 @@ const Filter: React.FC = () => {
         <div className={classNames("sort-detail", { show: orderSpread })}>
           <ul>{renderSortArr()}</ul>
         </div>
-        <FilterList show={filterSpread}></FilterList>
+        <FilterList show={filterSpread} toggleShow={toggleShow}></FilterList>
       </div>
       <div className={classNames({ mask: orderSpread || filterSpread })}></div>
     </div>

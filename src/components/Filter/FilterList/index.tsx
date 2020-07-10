@@ -1,15 +1,16 @@
 /**
  * @description 筛选框中的弹出层
  */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./FilterList.scss";
 import { RootState } from "../../../Models";
 import { connect, ConnectedProps } from "react-redux";
-import { IFilterItemList } from "../../../Models/filter";
+import { IFilterItem } from "../../../Models/filter";
 import classNames from "classnames";
 
 const mapStateToProps = ({ filterList }: RootState) => ({
   items: filterList.items,
+  count: filterList.count,
 });
 
 const connector = connect(mapStateToProps);
@@ -17,9 +18,10 @@ type ModelState = ConnectedProps<typeof connector>;
 
 interface IProps {
   show: boolean;
+  toggleShow: () => void;
 }
 const FilterList: React.FC<ModelState & IProps> = (props) => {
-  const { items, dispatch, show } = props;
+  const { items, dispatch, show, count, toggleShow } = props;
 
   const fetchData = () => {
     dispatch({
@@ -27,35 +29,69 @@ const FilterList: React.FC<ModelState & IProps> = (props) => {
     });
   };
   useEffect(fetchData, []);
+  /**
+   * @description 更改tag的点击状态
+   */
+  const handleClick = (row, index) => {
+    dispatch({
+      type: "filterList/setActive",
+      payload: {
+        row,
+        index,
+      },
+    });
+  };
 
   /**
-   * @description 渲染每一行中的Filter单个元素,传递行数方便做样式区分
+   * @description 清除点击状态
    */
-  const renderFilterInner = (
-    filterItemList: IFilterItemList[],
-    row: number
-  ) => {
-    if (row !== 3) {
-      return filterItemList.map((item, index) => {
-        const { icon, name } = item;
+  const clearSelected = () => {
+    dispatch({
+      type: "filterList/clearActive",
+    });
+  };
+
+  /**
+   * @description 提交筛选请求
+   */
+  const filterSubmit = () => {
+    toggleShow();
+    if (count === 0) return;
+    dispatch({
+      type: "contentList/getFilterList",
+    });
+  };
+
+  /**
+   * @description 渲染每一行中的Filter单个元素,传递行数方便做样式和逻辑区分
+   */
+  const renderFilterInner = (filterItemList: IFilterItem[], row: number) => {
+    return filterItemList.map((item, index) => {
+      const { icon, name, active } = item;
+      if (row !== 3) {
         return (
-          <li className="filter-tag" key={index}>
+          <li
+            className={classNames("filter-tag", { active })}
+            key={index}
+            onClick={handleClick.bind(null, row, index)}
+          >
             {icon ? <img className="inner-icon" src={icon}></img> : null}
             <span>{name}</span>
           </li>
         );
-      });
-    } else {
-      return filterItemList.map((item, index) => {
-        const { icon, name } = item;
+      } else {
         return (
-          <li className="discount" key={index}>
+          <li
+            className={classNames("discount", { active })}
+            key={index}
+            onClick={handleClick.bind(null, 3, index)}
+          >
             <img src={icon}></img>
             <span>{name}</span>
           </li>
         );
-      });
-    }
+      }
+    });
   };
 
   /**
@@ -77,8 +113,12 @@ const FilterList: React.FC<ModelState & IProps> = (props) => {
     <div className={classNames("filter-list", { show })}>
       <div className="filter-wrap">{renderFilter()}</div>
       <div className="filter-buttons">
-        <span className="clear-button">清除筛选</span>
-        <span className="close-button">完成</span>
+        <span className="clear-button" onClick={clearSelected}>
+          清除筛选
+        </span>
+        <span className="close-button" onClick={filterSubmit}>
+          完成{count === 0 ? null : <i>{count}</i>}
+        </span>
       </div>
     </div>
   );
