@@ -1,11 +1,11 @@
 /**
  * @description 主页上的头部组件
  */
-import React, { useEffect } from "react";
-import "./Order.scss";
-import { RootState } from "../../Models";
-import { connect, ConnectedProps } from "react-redux";
-import OrderItem from "../../components/OrderItem";
+import React, { useEffect } from 'react';
+import './Order.scss';
+import { RootState } from '../../../Models';
+import { connect, ConnectedProps } from 'react-redux';
+import OrderItem from '../../../components/OrderItem';
 
 const mapStateToProps = ({ orderList }: RootState) => ({
   items: orderList.items,
@@ -22,7 +22,7 @@ const Order: React.FC<ModelState> = (props) => {
    */
   const fetchData = () => {
     dispatch({
-      type: "orderList/getOrderList",
+      type: 'orderList/getOrderList',
     });
   };
 
@@ -35,13 +35,13 @@ const Order: React.FC<ModelState> = (props) => {
       const { shopName } = item;
       return (
         <OrderItem {...item} key={index}>
-          {shopName}{" "}
+          {shopName}{' '}
         </OrderItem>
       );
     });
   };
 
-  return <div className="order">{renderOrderList()}</div>;
+  return <div className='order'>{renderOrderList()}</div>;
 };
 
 export default connect(mapStateToProps)(Order);

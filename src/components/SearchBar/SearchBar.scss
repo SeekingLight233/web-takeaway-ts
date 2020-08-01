@@ -26,20 +26,20 @@
         text-overflow: ellipsis;
         overflow: hidden;
         &::before {
-          content: "";
+          content: '';
           width: 15px;
           height: 15px;
-          background: url("./img/locate.png");
+          background: url('./img/locate.png');
           background-repeat: no-repeat;
           background-size: contain;
           display: inline-block;
           margin-right: 5px;
         }
         &::after {
-          content: "";
+          content: '';
           width: 10px;
           height: 10px;
-          background: url("./img/arrow.png");
+          background: url('./img/arrow.png');
           background-size: contain;
           background-repeat: no-repeat;
           display: inline-block;
@@ -52,23 +52,27 @@
       position: relative;
       background: #fff;
       border-radius: 100px;
+      width: 65vw;
+      height: 32px;
+      display: flex;
+      align-items: center;
       .zoom-scope {
         display: inline-block;
         width: 15px;
         height: 15px;
-        background: url("./img/zoom_scope.png");
+        background: url('./img/zoom_scope.png');
         background-size: cover;
-        transform: translateX(10px) translateY(2px) scale(1.2);
+        transform: translateX(10px) translateY(-1px) scale(1.2);
       }
       input {
-        width: 225px;
+        width: 70%;
         position: relative;
         height: 30px;
-        padding-left: 20px;
         border: none;
         box-sizing: border-box;
         border-radius: 100px;
         font-size: 14px;
+        transform: translateX(20px);
       }
     }
   }
