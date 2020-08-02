@@ -43,7 +43,15 @@ module.exports = {
         test: /\.scss$/,
         loader: [
           'style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            // 算了  还是用BEM命名法叭
+            // options: {
+            //   modules: {
+            //     localIdentName: '[hash:base64:6]',
+            //   },
+            // },
+          },
           'sass-loader',
           {
             loader: 'sass-resources-loader',

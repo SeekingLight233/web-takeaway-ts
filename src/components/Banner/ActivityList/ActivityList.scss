@@ -1,0 +1,38 @@
+.activity-list {
+  position: relative;
+  display: flex;
+
+  .activity-list__scroll-wrap {
+    height: 20px;
+    overflow-y: hidden;
+  }
+  &__scroll {
+    display: block;
+  }
+  &__icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-bottom: 6px;
+  }
+  &__info {
+    display: inline-block;
+    line-height: 15px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 6px;
+    white-space: nowrap;
+    width: 90%;
+  }
+  &__arrow {
+    display: inline-block;
+    width: 5px;
+    margin-top: 1px;
+    height: 10px;
+    background-image: url('../img/arrow.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
