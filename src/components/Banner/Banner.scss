@@ -1,5 +1,7 @@
 .banner {
   font-size: 14px;
+  font-family: 'PingFangSC-Regular', Hiragino Sans GB, Arial, Helvetica,
+    '\5B8B\4F53', sans-serif;
   &__goback {
     z-index: 1000;
     display: flex;
@@ -34,6 +36,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    font-size: 12px;
   }
   &__distance {
   }
@@ -42,6 +45,13 @@
   &__meters {
   }
   &__board {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 71vw;
+    line-height: 16px;
+    height: 16px;
   }
   &__discount {
   }

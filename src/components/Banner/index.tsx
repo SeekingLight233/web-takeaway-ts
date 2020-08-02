@@ -45,7 +45,7 @@ const Banner: React.FC<ModelState> = (props) => {
         <img className='banner__left' src={shopPic}></img>
         <div className='banner__right'>
           <div className='banner__distance'>
-            <span className='banner__time'>{deliveryTimeDecoded}</span>
+            <span className='banner__time'>{deliveryTimeDecoded}分钟</span>
             <span className='banner__meters'>{distance}</span>
           </div>
           <div className='banner__board'>{bulletin}</div>
