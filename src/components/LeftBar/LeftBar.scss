@@ -1,0 +1,36 @@
+.left-bar {
+  padding-bottom: 40px;
+  position: absolute;
+  width: 90px;
+  overflow: auto;
+  height: 100%;
+  background-color: #f5f5f5;
+  &__nav {
+    display: flex;
+    width: 90px;
+    height: 50px;
+    font-size: 14px;
+  }
+  &__item-wrap {
+    display: flex;
+    margin: auto;
+  }
+  &__item {
+    width: 60px;
+    display: inline-block;
+    margin: auto;
+    color: #666666;
+    line-height: 1.15;
+    overflow: hidden;
+  }
+  &__icon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 4px;
+  }
+  .active {
+    background-color: #fff;
+    font-weight: bolder;
+  }
+}

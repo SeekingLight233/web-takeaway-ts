@@ -46,12 +46,12 @@ interface Category {
     categoryName: string,
     spuList: Spu[],
     spuPromotionInfo: string,
-
 }
 
 export interface FoodListState {
     shopInfo: ShopInfo
-    categoryList: Category[]
+    categoryList: Category[],
+    activeLeftTag: string
 }
 
 interface FoodListModel extends Model {
@@ -59,6 +59,7 @@ interface FoodListModel extends Model {
     state: FoodListState,
     reducers: {
         setState: Reducer<FoodListState>,
+        setActive: Reducer<FoodListState>,
     },
     effects: {
         getFoodList: Effect
@@ -76,7 +77,8 @@ const initState: FoodListState = {
         bulletin: "",
         activityList: []
     },
-    categoryList: []
+    categoryList: [],
+    activeLeftTag: ""
 }
 
 /**
@@ -98,6 +100,11 @@ const FoodListModel: FoodListModel = {
     reducers: {
         setState(state = initState, { payload }): FoodListState {
             return { ...state, ...payload }
+        },
+        setActive(state = initState, { payload }) {
+            // const { activeLeftTag } = payload
+            console.log(payload);
+            return { ...state, activeLeftTag: payload }
         },
     },
     effects: {
