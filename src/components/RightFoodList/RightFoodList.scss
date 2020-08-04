@@ -1,0 +1,17 @@
+.right-food-list {
+  position: relative;
+  width: 264px;
+  left: 100px;
+  overflow: auto;
+  background-color: #ffffff;
+  &__title {
+    box-sizing: border-box;
+    height: 36px;
+    line-height: 36px;
+    width: 264px;
+    font-size: 12px;
+    padding-left: 10px;
+    z-index: 2px;
+    color: #333333;
+  }
+}

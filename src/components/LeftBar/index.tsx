@@ -1,7 +1,7 @@
 /**
  * @description 商家详情中的LeftBar
  */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LeftBar.scss';
 import { connect, ConnectedProps } from 'react-redux';
 import { RootState } from '../../Models';

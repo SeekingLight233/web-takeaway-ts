@@ -4,7 +4,6 @@
 import React, { useState, useEffect } from 'react';
 import './ActivityList.scss';
 import { Activity } from '../../../Models/foods';
-import { useSlider } from '../../../utils/hooks';
 
 interface IProps {
   activityList: Activity[];

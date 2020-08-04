@@ -3,6 +3,11 @@
   position: absolute;
   width: 90px;
   overflow: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   height: 100%;
   background-color: #f5f5f5;
   &__nav {
@@ -10,6 +15,7 @@
     width: 90px;
     height: 50px;
     font-size: 14px;
+    color: #666666;
   }
   &__item-wrap {
     display: flex;
@@ -19,7 +25,6 @@
     width: 60px;
     display: inline-block;
     margin: auto;
-    color: #666666;
     line-height: 1.15;
     overflow: hidden;
   }
@@ -32,5 +37,6 @@
   .active {
     background-color: #fff;
     font-weight: bolder;
+    color: #000000;
   }
 }

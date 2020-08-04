@@ -26,7 +26,7 @@ interface Sku {
     skuPromotionInfo: string
 }
 
-interface Spu {
+export interface Spu {
     spuName: string,
     activityTag: string,
     littleImageUrl: string,
@@ -118,7 +118,9 @@ const FoodListModel: FoodListModel = {
                 type: "setState",
                 payload: {
                     shopInfo,
-                    categoryList
+                    categoryList,
+                    // 请求到事物列表后设置默认activeLeftTag
+                    activeLeftTag: categoryList[0].categoryName
                 }
             })
         }
