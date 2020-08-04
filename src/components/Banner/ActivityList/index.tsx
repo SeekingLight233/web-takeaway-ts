@@ -16,7 +16,6 @@ const ActivityList: React.FC<IProps> = (props) => {
 
   useEffect(() => {
     if (length !== 0) {
-      console.log(location);
       const I = setInterval(() => {
         setLocation((location) => (location + 1) % length);
       }, 2500);

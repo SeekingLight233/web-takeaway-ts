@@ -1,11 +1,12 @@
 /**
  * @description 商家详情中的LeftBar
  */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './LeftBar.scss';
 import { connect, ConnectedProps } from 'react-redux';
 import { RootState } from '../../Models';
 import classNames from 'classnames';
+import { Context } from '../../pages/detail/Router';
 const mapStateToProps = ({ foodList }: RootState) => ({
   categoryList: foodList.categoryList,
   activeLeftTag: foodList.activeLeftTag,
@@ -16,7 +17,7 @@ type ModelState = ConnectedProps<typeof connector>;
 
 const LeftBar: React.FC<ModelState> = (props) => {
   const { categoryList, dispatch, activeLeftTag } = props;
-
+  const sticky = useContext(Context);
   /**
    * @description 更改leftBar的点击状态
    */
@@ -52,7 +53,11 @@ const LeftBar: React.FC<ModelState> = (props) => {
       );
     });
   };
-  return <nav className='left-bar'>{renderCategoryList()}</nav>;
+  return (
+    <nav className={classNames('left-bar', { sticky })}>
+      {renderCategoryList()}
+    </nav>
+  );
 };
 
 export default connect(mapStateToProps)(LeftBar);

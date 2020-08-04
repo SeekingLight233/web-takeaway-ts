@@ -2,14 +2,18 @@
  * @description 商家中的TabBar
  */
 import { HashRouter, NavLink, Route } from 'react-router-dom';
-import React from 'react';
+import React, { useContext } from 'react';
 import './TabBar.scss';
+import { Context } from '../../pages/detail/Router';
+import classNames from 'classnames';
 
 const TabBar: React.FC = (props) => {
+  const sticky = useContext(Context);
+
   return (
-    <div className='tab-bar'>
+    <div className={classNames('tab-bar', { 'tab-sticky': sticky })}>
       <HashRouter>
-        <nav className='tab-bar__nav'>
+        <nav className={classNames('tab-bar__nav', { 'nav-sticky': sticky })}>
           <NavLink
             to='/restaurant'
             className='tab-bar__link'

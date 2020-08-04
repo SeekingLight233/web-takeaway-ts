@@ -1,7 +1,7 @@
 /**
  * @description 单个食物组件
  */
-import React from 'react';
+import React, { useState } from 'react';
 import './FoodItem.scss';
 import { Spu } from '../../../Models/foods';
 
@@ -28,7 +28,7 @@ const FoodItem: React.FC<IProps> = (props) => {
     return skuList.map((item, index) => {
       const { skuPromotionInfo } = item;
       return (
-        <div className='food-item__sku'>
+        <div className='food-item__sku' key={index}>
           {skuPromotionInfo ? (
             <div className='food-item__sku-inner'>
               <span className='food-item__sku-text'>{skuPromotionInfo}</span>

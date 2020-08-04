@@ -11,7 +11,13 @@
     width: 264px;
     font-size: 12px;
     padding-left: 10px;
-    z-index: 2px;
+    margin-left: -10px;
+    z-index: 10;
+    background-color: #fff;
     color: #333333;
   }
+}
+.title-sticky {
+  position: fixed;
+  top: 40px;
 }

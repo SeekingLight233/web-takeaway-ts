@@ -1,5 +1,14 @@
+.tab-sticky {
+  height: 42px;
+}
 .tab-bar {
   position: relative;
+  .nav-sticky {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+  }
   &__nav {
     display: flex;
     justify-content: space-around;

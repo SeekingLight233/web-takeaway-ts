@@ -1,12 +1,14 @@
 /**
  * @description 商家详情  右部的事物列表
  */
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import './RightFoodList.scss';
 import { connect, ConnectedProps } from 'react-redux';
 import { RootState } from '../../Models';
 import classNames from 'classnames';
 import FoodItem from './FoodItem';
+import { useScroll } from '../../utils/hooks';
+import { Context } from '../../pages/detail/Router';
 const mapStateToProps = ({ foodList }: RootState) => ({
   foodList,
 });
@@ -17,6 +19,7 @@ type ModelState = ConnectedProps<typeof connector>;
 const RightFoodList: React.FC<ModelState> = (props) => {
   const { dispatch, foodList } = props;
   const { activeLeftTag, categoryList } = foodList;
+  const sticky = useContext(Context);
 
   /**
    * @description 根据左边的选择种类渲染右边的事物列表
@@ -33,8 +36,14 @@ const RightFoodList: React.FC<ModelState> = (props) => {
   };
 
   return (
-    <div className='right-food-list'>
-      <div className='right-food-list__title'>{activeLeftTag}</div>
+    <div className={classNames('right-food-list')}>
+      <div
+        className={classNames('right-food-list__title', {
+          'title-sticky': sticky,
+        })}
+      >
+        {activeLeftTag}
+      </div>
       <div className='right-food-list__main'>{renderFoodList()}</div>
     </div>
   );

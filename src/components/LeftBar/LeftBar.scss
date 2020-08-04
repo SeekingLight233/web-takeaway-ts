@@ -1,5 +1,6 @@
 .left-bar {
-  padding-bottom: 40px;
+  padding-bottom: 50vh;
+  display: block;
   position: absolute;
   width: 90px;
   overflow: auto;
@@ -16,6 +17,9 @@
     height: 50px;
     font-size: 14px;
     color: #666666;
+    &:last-child {
+      padding-bottom: 40vh;
+    }
   }
   &__item-wrap {
     display: flex;
@@ -25,6 +29,7 @@
     width: 60px;
     display: inline-block;
     margin: auto;
+    color: #666666;
     line-height: 1.15;
     overflow: hidden;
   }
@@ -39,4 +44,8 @@
     font-weight: bolder;
     color: #000000;
   }
+}
+.sticky {
+  position: fixed;
+  top: 40px;
 }
