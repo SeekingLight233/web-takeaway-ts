@@ -4,9 +4,11 @@
 import React, { useState } from 'react';
 import './FoodItem.scss';
 import { Spu } from '../../../Models/foods';
+import store from '../../../Models/dva';
 
 interface IProps {
   spu: Spu;
+  tag: string;
 }
 
 const FoodItem: React.FC<IProps> = (props) => {
@@ -24,6 +26,32 @@ const FoodItem: React.FC<IProps> = (props) => {
 
   // const active = sellStatus > 0;
   const active = true;
+
+  /**
+   * @description 商品计数器
+   */
+  const addCount = () => {
+    store.dispatch({
+      type: 'foodList/setSellState',
+      payload: {
+        spu: { ...props.spu, sellStatus: sellStatus + 1 },
+        tag: props.tag,
+      },
+    });
+  };
+
+  const minCount = () => {
+    if (sellStatus > 0) {
+      console.log(`现在的值:  ${sellStatus - 1}`);
+      store.dispatch({
+        type: 'foodList/setSellState',
+        payload: {
+          spu: { ...props.spu, sellStatus: sellStatus - 1 },
+          tag: props.tag,
+        },
+      });
+    }
+  };
 
   /**
    * @description 折扣信息
@@ -72,11 +100,21 @@ const FoodItem: React.FC<IProps> = (props) => {
         {active ? (
           <div className='food-item__count'>
             <span className='food-item__count-left'>
-              <button className='food-item__count-left-btn'></button>
+              <button
+                className='food-item__count-left-btn'
+                onClick={() => {
+                  minCount();
+                }}
+              ></button>
             </span>
-            <span className='food-item__count-amount'>3</span>
+            <span className='food-item__count-amount'>{sellStatus}</span>
             <span className='food-item__count-right'>
-              <button className='food-item__count-right-btn'></button>
+              <button
+                className='food-item__count-right-btn'
+                onClick={() => {
+                  addCount();
+                }}
+              ></button>
             </span>
           </div>
         ) : (

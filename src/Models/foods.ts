@@ -38,8 +38,9 @@ export interface Spu {
     spuDesc: string,
     saleVolumeDecoded: string,
     saleVolume: number,
-    praiseNumDecoded: string
-    skuList: Sku[]
+    praiseNumDecoded: string,
+    skuList: Sku[],
+    spuId?: number
 }
 
 interface Category {
@@ -48,13 +49,17 @@ interface Category {
     categoryName: string,
     spuList: Spu[],
     spuPromotionInfo: string,
+    tag?: string,
+    cateTotal: number,
 }
 
 export interface FoodListState {
     shopInfo: ShopInfo
     categoryList: Category[],
     activeLeftTag: string,
-    totalPrice: number
+    totalPrice: number,
+    totalOriginPrice: number,
+    totalAmount: number
 }
 
 interface FoodListModel extends Model {
@@ -63,6 +68,7 @@ interface FoodListModel extends Model {
     reducers: {
         setState: Reducer<FoodListState>,
         setActive: Reducer<FoodListState>,
+        setSellState: Reducer<FoodListState>,
     },
     effects: {
         getFoodList: Effect
@@ -83,7 +89,9 @@ const initState: FoodListState = {
     },
     categoryList: [],
     activeLeftTag: "",
-    totalPrice: 9
+    totalPrice: 0,
+    totalOriginPrice: 0,
+    totalAmount: 0,
 }
 
 /**
@@ -108,9 +116,63 @@ const FoodListModel: FoodListModel = {
         },
         setActive(state = initState, { payload }) {
             // const { activeLeftTag } = payload
-            console.log(payload);
             return { ...state, activeLeftTag: payload }
         },
+        /**
+         * @description 更新商品的购买数量（计数器）
+         */
+        setSellState(state = initState, { payload }) {
+
+            const spu: Spu = payload.spu;
+            const { sellStatus, originPrice, currentPrice } = spu
+
+            const cateTag = payload.tag
+            let { totalAmount, totalPrice, totalOriginPrice } = state;
+
+
+            const newCategoryList = state.categoryList.map((category) => {
+                const { spuList } = category
+                let cateTotal = category.cateTotal;
+                if (cateTotal == null) {
+                    cateTotal = 0
+                }
+
+                const newSpuList = spuList.map((originSpu) => {
+                    // 我佛了spuId竟然是不唯一的,这里利用外部的category tag生成唯一索引
+                    const originID = originSpu.spuId.toString() + category.tag;
+                    const newID = spu.spuId.toString() + cateTag
+
+                    if (originID === newID) {
+                        // 更新totalAmount
+                        if (originSpu.sellStatus < spu.sellStatus) {
+                            totalAmount = totalAmount + 1;
+                            totalPrice = totalPrice + currentPrice
+                            totalOriginPrice = totalOriginPrice + originPrice;
+                            cateTotal++;
+                        }
+                        if (originSpu.sellStatus >= spu.sellStatus) {
+                            totalAmount = totalAmount - 1;
+                            totalPrice = totalPrice - currentPrice
+                            totalOriginPrice = totalOriginPrice - originPrice;
+                            cateTotal--;
+                        }
+                        return spu
+                    } else {
+                        return originSpu
+                    }
+                })
+                return { ...category, spuList: newSpuList, cateTotal }
+            })
+
+
+            return {
+                ...state,
+                categoryList: newCategoryList,
+                totalAmount,
+                totalPrice: Number(totalPrice.toFixed(1)),
+                totalOriginPrice: Number(totalOriginPrice.toFixed(1))
+            }
+        }
     },
     effects: {
         /**

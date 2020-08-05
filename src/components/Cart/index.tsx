@@ -16,11 +16,17 @@ type ModelState = ConnectedProps<typeof connector>;
 
 const Cart: React.FC<ModelState> = (props) => {
   const { dispatch, foodList } = props;
-  const { categoryList, shopInfo, totalPrice } = foodList;
-  const active = totalPrice !== 0;
+  const {
+    categoryList,
+    shopInfo,
+    totalPrice,
+    totalAmount,
+    totalOriginPrice,
+  } = foodList;
+  const active = totalAmount !== 0;
   const check = totalPrice >= shopInfo.minFee;
 
-  console.log(totalPrice);
+  // console.log(totalPrice);s
 
   /**
    * @description 展开购物车
@@ -42,7 +48,7 @@ const Cart: React.FC<ModelState> = (props) => {
           spreadCart();
         }}
       >
-        {active ? <div className='cart__num'>3</div> : null}
+        {active ? <div className='cart__num'>{totalAmount}</div> : null}
       </div>
       <div className='cart__text'>
         <div className='cart__price'>
@@ -52,8 +58,8 @@ const Cart: React.FC<ModelState> = (props) => {
           <div className='cart__total-wrap'>
             <div className='cart__total'>
               <span className='cart__price-prefix'>￥</span>
-              <span className='cart__current-price'>6.6</span>
-              <span className='cart__origin-price'>￥4.2</span>
+              <span className='cart__current-price'>{totalPrice}</span>
+              <span className='cart__origin-price'>￥{totalOriginPrice}</span>
             </div>
             <div className='cart__total-other'>另需配送费￥4</div>
           </div>
@@ -69,7 +75,7 @@ const Cart: React.FC<ModelState> = (props) => {
             'cart__conform-active': active && !check,
           })}
         >
-          差¥8.4起送
+          差¥{(shopInfo.minFee - totalPrice).toFixed(1)}起送
         </div>
       )}
     </div>

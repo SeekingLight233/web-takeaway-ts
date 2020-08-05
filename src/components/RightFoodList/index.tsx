@@ -26,10 +26,10 @@ const RightFoodList: React.FC<ModelState> = (props) => {
    */
   const renderFoodList = () => {
     return categoryList.map((item, index) => {
-      const { categoryName, spuList } = item;
+      const { categoryName, spuList, tag } = item;
       if (item.categoryName === activeLeftTag) {
         return spuList.map((spu, index) => {
-          return <FoodItem spu={spu} key={index}></FoodItem>;
+          return <FoodItem spu={spu} tag={tag} key={index}></FoodItem>;
         });
       }
     });

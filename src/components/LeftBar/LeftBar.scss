@@ -13,6 +13,7 @@
   background-color: #f5f5f5;
   &__nav {
     display: flex;
+    position: relative;
     width: 90px;
     height: 50px;
     font-size: 14px;
@@ -48,4 +49,19 @@
 .sticky {
   position: fixed;
   top: 40px;
+}
+.left-bar__item-total {
+  position: absolute;
+  top: 1px;
+  right: 0px;
+  color: #fff;
+  background-color: #fb4e44;
+  font-size: 10px;
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+  line-height: 24px;
+  transform: scale(0.5) translate(50%, -50%);
+  border-radius: 50%;
+  text-align: center;
 }

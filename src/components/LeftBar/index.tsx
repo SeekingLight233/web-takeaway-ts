@@ -30,7 +30,7 @@ const LeftBar: React.FC<ModelState> = (props) => {
 
   const renderCategoryList = () => {
     return categoryList.map((item, index) => {
-      const { categoryName, iconUrl } = item;
+      const { categoryName, iconUrl, cateTotal } = item;
       return (
         <a
           className={classNames('left-bar__nav', {
@@ -48,6 +48,9 @@ const LeftBar: React.FC<ModelState> = (props) => {
               ) : null}
               {categoryName}
             </span>
+            {cateTotal > 0 ? (
+              <div className='left-bar__item-total'>{cateTotal}</div>
+            ) : null}
           </div>
         </a>
       );
