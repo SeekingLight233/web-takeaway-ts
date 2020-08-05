@@ -19,7 +19,11 @@ const FoodItem: React.FC<IProps> = (props) => {
     originPrice,
     currentPrice,
     skuList,
+    sellStatus,
   } = props.spu;
+
+  // const active = sellStatus > 0;
+  const active = true;
 
   /**
    * @description 折扣信息
@@ -65,7 +69,19 @@ const FoodItem: React.FC<IProps> = (props) => {
           </span>
           <span className='food-item__origin'>￥{originPrice}</span>
         </div>
-        <div className='food-item__button'></div>
+        {active ? (
+          <div className='food-item__count'>
+            <span className='food-item__count-left'>
+              <button className='food-item__count-left-btn'></button>
+            </span>
+            <span className='food-item__count-amount'>3</span>
+            <span className='food-item__count-right'>
+              <button className='food-item__count-right-btn'></button>
+            </span>
+          </div>
+        ) : (
+          <div className='food-item__button'></div>
+        )}
         {skuList ? renderSkuList() : null}
       </div>
     </div>

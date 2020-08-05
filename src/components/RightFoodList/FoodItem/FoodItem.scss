@@ -125,4 +125,55 @@
     display: inline-block;
     padding: 1px;
   }
+  &__count {
+    position: absolute;
+    right: 0;
+    bottom: 38px;
+    height: 25px;
+  }
+  &__count-left {
+    padding-left: 20px;
+    padding-right: 10px;
+    margin-right: -10px;
+    padding-top: 15px;
+    margin-top: -15px;
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+    .food-item__count-left-btn {
+      border-radius: 50%;
+      display: inline-block;
+      height: 25px;
+      width: 25px;
+      background-size: 100% 100%;
+      border: none;
+      background-image: url(./img/min.png);
+      box-sizing: border-box;
+    }
+  }
+  &__count-amount {
+    display: inline-block;
+    transform: translateY(-5px);
+    padding: 0 10px;
+    text-align: center;
+    color: #333333;
+  }
+  &__count-right {
+    padding-right: 10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    margin-left: -10px;
+    padding-top: 15px;
+    margin-top: -15px;
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+    .food-item__count-right-btn {
+      border-radius: 50%;
+      display: inline-block;
+      height: 25px;
+      width: 25px;
+      background-size: 100% 100%;
+      border: none;
+      background-image: url(../../Banner/img/add.png);
+    }
+  }
 }

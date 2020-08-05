@@ -34,7 +34,7 @@ export interface Spu {
     bigImageUrl: string,
     originPrice: number,
     currentPrice: number,
-    currentAmount: number,
+    sellStatus: number,
     spuDesc: string,
     saleVolumeDecoded: string,
     saleVolume: number,
