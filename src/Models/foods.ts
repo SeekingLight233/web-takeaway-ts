@@ -19,6 +19,7 @@ interface ShopInfo {
     shopAddress: string,
     shipping_time: string,
     bulletin: string,
+    minFee: number,
     activityList: Activity[]
 }
 
@@ -33,6 +34,7 @@ export interface Spu {
     bigImageUrl: string,
     originPrice: number,
     currentPrice: number,
+    currentAmount: number,
     spuDesc: string,
     saleVolumeDecoded: string,
     saleVolume: number,
@@ -51,7 +53,8 @@ interface Category {
 export interface FoodListState {
     shopInfo: ShopInfo
     categoryList: Category[],
-    activeLeftTag: string
+    activeLeftTag: string,
+    totalPrice: number
 }
 
 interface FoodListModel extends Model {
@@ -75,10 +78,12 @@ const initState: FoodListState = {
         shopAddress: "",
         shipping_time: "",
         bulletin: "",
-        activityList: []
+        activityList: [],
+        minFee: 0
     },
     categoryList: [],
-    activeLeftTag: ""
+    activeLeftTag: "",
+    totalPrice: 9
 }
 
 /**
