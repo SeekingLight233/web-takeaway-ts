@@ -1,0 +1,126 @@
+.food-detail {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 12;
+  backdrop-filter: blur(20px) brightness(100%);
+  &__card-wrap {
+    border-radius: 0;
+    position: relative;
+    flex: 1 1 auto;
+    max-width: 84vw;
+    max-height: 88vh;
+    padding-bottom: 60px;
+    background: transparent;
+  }
+  &__card {
+    border-radius: 8px;
+    background-color: #fff;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    max-height: 88vh;
+    position: relative;
+    padding-bottom: 44px;
+  }
+  &__big-img {
+    background-size: 100% 100%;
+    width: 100%;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+  }
+  &__ul-wrap {
+    padding-top: 10px;
+    max-height: 100px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  &__li-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333333;
+    font-weight: bolder;
+    margin-bottom: 2px;
+    height: 22.5px;
+    line-height: 22.5px;
+    font-size: 16px;
+  }
+  &__li-sales {
+    font-size: 11px;
+    color: #666666;
+    margin-bottom: 5px;
+    height: 15px;
+    line-height: 15px;
+    transform: translateY(2px);
+  }
+  &__li-desc {
+    margin-top: 10px;
+    margin-bottom: 16px;
+    position: relative;
+    font-size: 11px;
+    color: #666;
+    line-height: 15px;
+  }
+  &__cart-price {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 17px;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &__price {
+    display: inline-block;
+    position: absolute;
+    color: #fb4e44;
+    font-size: 24px;
+    vertical-align: top;
+    left: 15px;
+    bottom: -16px;
+  }
+  &__cart {
+    right: 1px;
+    bottom: 1px;
+    .food-item__count {
+      position: absolute;
+      right: 26px;
+      bottom: -15px;
+      height: 25px;
+    }
+  }
+  &__cancel-btn {
+    display: inline-block;
+    position: absolute;
+    bottom: -14px;
+    right: 50%;
+    font-size: 15px;
+    line-height: 1em;
+    height: 40px;
+    width: 30px;
+    text-align: center;
+    color: #ffffff;
+    border: solid transparent 10px;
+    font-weight: lighter;
+    margin: 0;
+    margin-right: -34px;
+    background-image: url(https://s3plus.meituan.net/v1/mss_e2821d7f0cfe4ac1bf9202ecf9590e67/cdn-prod/file:9096d347/df125964473c5a2c4edadb74d8a11995.png);
+    background-size: 100% 100%;
+    box-sizing: content-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    outline: 0;
+  }
+}
