@@ -17,6 +17,10 @@
       "deliveryMsg": "由美团快送提供配送服务",
       "minFee": 10.0,
       "minFeeDecoded": "10.0",
+      "resScore": "4.7",
+      "foodScore": "4.7",
+      "packetScore": "4.8",
+      "deleveryScore": "4.9",
       "activityList": [
         {
           "actDesc": "满25减4;满35减8;满52减15;满69减22;满88减30",

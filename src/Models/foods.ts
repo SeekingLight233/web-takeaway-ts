@@ -20,7 +20,11 @@ interface ShopInfo {
     shipping_time: string,
     bulletin: string,
     minFee: number,
-    activityList: Activity[]
+    activityList: Activity[],
+    resScore?: string,
+    foodScore?: string,
+    packetScore?: string,
+    deleveryScore?: string,
 }
 
 interface Sku {
