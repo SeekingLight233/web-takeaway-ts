@@ -4,8 +4,9 @@ import ContentListModel, { ContentListState } from "./contentList";
 import OrderListModel, { OrderListState } from "./order";
 import FilterListModel, { FilterListState } from "./filter";
 import FoodListModel, { FoodListState } from './foods';
+import CommentListModel, { CommentListState } from './comment';
 
-const models = [tabModel, CateModel, ContentListModel, OrderListModel, FilterListModel, FoodListModel]
+const models = [tabModel, CateModel, ContentListModel, OrderListModel, FilterListModel, FoodListModel, CommentListModel]
 
 export type RootState = {
     tab: TabState,
@@ -13,7 +14,8 @@ export type RootState = {
     contentList: ContentListState,
     orderList: OrderListState,
     filterList: FilterListState,
-    foodList: FoodListState
+    foodList: FoodListState,
+    commentList: CommentListState
 }
 
 export default models

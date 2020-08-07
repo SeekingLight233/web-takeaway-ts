@@ -17,7 +17,6 @@ const Star: React.FC<IProps> = (props) => {
     const stars = [];
     const int_part = Math.floor(starScore);
     const float_part = (starScore - int_part).toFixed(1);
-    console.log(`整数部分是${int_part}  小数部分${float_part}`);
     const scoreArr = [];
     for (let i = 0; i < 5; i++) {
       if (i < int_part) {

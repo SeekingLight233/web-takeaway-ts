@@ -1,0 +1,41 @@
+.comment-tag {
+  padding: 15px 14px 5px 14px;
+  background: #fff;
+  margin-top: 10px;
+  color: #666;
+  position: relative;
+  &__wrap {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 12px;
+    height: 26px;
+    line-height: 27px;
+    margin: 0 10px 10px 0;
+    background: #fff;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    position: relative;
+  }
+  &__wrap::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    left: -50%;
+    right: -50%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bbb;
+    border-radius: 26px;
+  }
+  .comment-tag-active {
+    background: #fffbf1;
+    color: #ffb000;
+  }
+  .comment-tag-active::before {
+    border-color: #ffb000;
+  }
+}
