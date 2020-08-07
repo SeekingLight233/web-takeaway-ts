@@ -1,0 +1,19 @@
+.star {
+  height: 16px;
+  display: inline-block;
+  .yellow-star {
+    background: url('../img/star.png');
+    width: 10px;
+    height: 10px;
+    float: left;
+    background-position: 40% 5.66%;
+    background-size: 126% 379%;
+    transform: scale(0.83) translateY(1px);
+  }
+  .gray-star {
+    background-position: 40% 96.226%;
+  }
+  .half-star {
+    background-position: 40% 50.943%;
+  }
+}

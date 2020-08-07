@@ -37,23 +37,23 @@
       .item-sales {
         width: 50%;
         height: 16px;
-        .star {
-          background: url("./img/star.png");
-          width: 10px;
-          height: 10px;
-          float: left;
-          background-position: 40% 5.66%;
-          background-size: 126% 379%;
-          transform: scale(0.83) translateY(1px);
-        }
-        .gray-star {
-          background-position: 40% 96.226%;
-        }
+        // .star {
+        //   background: url("./img/star.png");
+        //   width: 10px;
+        //   height: 10px;
+        //   float: left;
+        //   background-position: 40% 5.66%;
+        //   background-size: 126% 379%;
+        //   transform: scale(0.83) translateY(1px);
+        // }
+        // .gray-star {
+        //   background-position: 40% 96.226%;
+        // }
         .star-score {
           margin-left: 4px;
           margin-right: 10px;
           display: inline-block;
-          transform: translateY(-1px);
+          transform: translateY(-5px);
         }
       }
       .item-delivery {
@@ -61,7 +61,7 @@
         width: 50%;
       }
       .item-distance::before {
-        content: "";
+        content: '';
         display: inline-block;
         margin: 0 3px;
         height: 6px;
@@ -76,7 +76,7 @@
         line-height: 1.4;
       }
       .item-price-detail::before {
-        content: "";
+        content: '';
         display: inline-block;
         margin: 0 3px;
         height: 6px;
@@ -88,7 +88,7 @@
       }
       .meituan-tag {
         float: right;
-        background-image: url("./img/mt-tag.png");
+        background-image: url('./img/mt-tag.png');
         background-repeat: no-repeat;
         width: 50px;
         height: 15px;
@@ -102,7 +102,7 @@
       overflow: hidden;
       .discount-arrow-up {
         position: absolute;
-        background-image: url("./img/arrow-up.png");
+        background-image: url('./img/arrow-up.png');
         background-size: cover;
         top: 8px;
         right: 0;
