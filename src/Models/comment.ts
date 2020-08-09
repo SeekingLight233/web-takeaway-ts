@@ -4,6 +4,7 @@
 import { Effect, Model } from 'dva-core-ts'
 import { Reducer } from 'redux'
 import axios from 'axios'
+import store from "./dva"
 import { cloneDeep } from "lodash"
 
 interface ILabel {
@@ -15,7 +16,7 @@ interface Picture {
     smallPicUrl: string
 }
 
-interface IComment {
+export interface IComment {
     userName: string,
     userPicUrl: string,
     commentTime: string,
@@ -29,7 +30,8 @@ interface IComment {
 
 export interface CommentListState {
     list: IComment[],
-    commentLabels: ILabel[]
+    commentLabels: ILabel[],
+    loading: boolean
 }
 
 interface CommentListModel extends Model {
@@ -37,6 +39,7 @@ interface CommentListModel extends Model {
     state: CommentListState,
     reducers: {
         setState: Reducer<CommentListState>,
+        setActive: Reducer<CommentListState>,
     },
     effects: {
         getCommentList: Effect
@@ -45,16 +48,20 @@ interface CommentListModel extends Model {
 
 const initState: CommentListState = {
     list: [],
-    commentLabels: []
+    commentLabels: [],
+    loading: false
 }
 
 /**
  * @description 模拟网络请求
  */
-const fetchData = (): Promise<CommentListState> => {
+const fetchData = (flag: any): Promise<CommentListState> => {
+    const commentState = store.getState().commentList
+
+    flag = flag ? 1 : 2
     return new Promise((resolve, reject) => {
         setTimeout(async () => {
-            const res: CommentListState = await axios.get(`./data/comment.json`);
+            const res: CommentListState = await axios.get(`./data/comment${flag}.json`);
             resolve(res);
         }, 500);
     });
@@ -68,21 +75,60 @@ const CommentListModel: CommentListModel = {
         setState(state = initState, { payload }): CommentListState {
             return { ...state, ...payload }
         },
+        setActive(state = initState, { payload }): CommentListState {
+            const { index, flag } = payload;
+
+            const newCommentLabels = state.commentLabels.map((item, _index) => {
+                if (index === _index) {
+                    return {
+                        ...item,
+                        isSelected: 1
+                    }
+                } else {
+                    return {
+                        ...item,
+                        isSelected: 0
+                    }
+                }
+            })
+
+            return { ...state, commentLabels: newCommentLabels, loading: true }
+        },
     },
     effects: {
         *getCommentList({ payload }, { call, put }) {
+            const { flag, init } = payload
             console.log("getCommentList");
 
-            const { data } = yield call(fetchData)
-            console.log(data);
-            const { commentLabels, list } = data
 
-            yield put({
-                type: "setState",
-                payload: {
-                    commentLabels, list
-                }
-            })
+            if (init) {
+                const { data } = yield call(fetchData.bind(null, true))
+                const { commentLabels, list } = data
+
+                yield put({
+                    type: "setState",
+                    payload: {
+                        list,
+                        commentLabels,
+                        loading: false
+                    }
+                })
+
+            } else {
+                const { data } = yield call(fetchData.bind(null, flag));
+                const { commentLabels, list } = data
+                yield put({
+                    type: "setState",
+                    payload: {
+                        list,
+                        loading: false
+                    }
+                })
+
+            }
+
+
+
         }
 
     }

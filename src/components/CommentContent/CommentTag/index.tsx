@@ -1,7 +1,7 @@
 /**
  * @description 评价
  */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './CommentTag.scss';
 import { connect, ConnectedProps } from 'react-redux';
 import { RootState } from '../../../Models';
@@ -17,12 +17,33 @@ type ModelState = ConnectedProps<typeof connector>;
 const CommentTag: React.FC<ModelState> = (props) => {
   const { dispatch, commentLabels } = props;
 
-  useEffect(() => {
+  const [flag, setFlag] = useState(true); // 模拟请求用的外部参数
+
+  const fetchData = (init?: boolean) => {
     dispatch({
       type: 'commentList/getCommentList',
+      payload: {
+        flag,
+        init,
+      },
     });
+  };
+
+  useEffect(() => {
+    fetchData(flag);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [flag]);
+
+  const changeTab = (index: number) => {
+    setFlag(!flag);
+    dispatch({
+      type: 'commentList/setActive',
+      payload: {
+        index,
+      },
+    });
+    fetchData();
+  };
 
   const renderLabels = () => {
     return commentLabels.map((item, index) => {
@@ -33,6 +54,9 @@ const CommentTag: React.FC<ModelState> = (props) => {
           className={classNames('comment-tag__wrap', {
             'comment-tag-active': isSelected === 1,
           })}
+          onClick={() => {
+            changeTab(index);
+          }}
         >
           {content}
         </span>

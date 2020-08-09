@@ -1,0 +1,88 @@
+.comment-item {
+  padding: 15px 15px 10px 0;
+  overflow: hidden;
+  background-color: #fff;
+  list-style: none;
+  position: relative;
+  line-height: 15px;
+  &__pic {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+  }
+  &__left {
+    float: left;
+    width: 15%;
+    transform: translateX(6px) translateY(-2px);
+  }
+  &__right {
+    float: left;
+    width: 85%;
+  }
+  &__top {
+    line-height: 15px;
+  }
+  &__username {
+    color: #2f2f2f;
+    font-size: 16px;
+  }
+  &__time {
+    font-size: 12px;
+    color: #898989;
+    float: right;
+  }
+  &__deliver-time {
+    margin-top: 7px;
+    line-height: 12px;
+    color: #666;
+    font-size: 12px;
+    line-height: 12px;
+  }
+  &__main {
+    font-size: 14px;
+    line-height: 20px;
+    color: #2f2f2f;
+    padding-top: 14px;
+    padding-bottom: 8px;
+  }
+  &__pic-list {
+    zoom: 1;
+    overflow: hidden;
+  }
+  &__praise {
+    margin: 4px 0;
+    font-size: 12px;
+  }
+  &__praise-icon {
+    width: 11px;
+    height: 11px;
+    margin-right: 10px;
+    background: url(./img/praise.png);
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__praise-dish {
+    color: #999;
+    vertical-align: middle;
+  }
+  &__tag {
+    margin: 4px 0;
+    font-size: 12px;
+  }
+  &__tag-icon {
+    width: 11px;
+    height: 11px;
+    margin-right: 10px;
+    background: url(./img/label.png);
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__tag-praise {
+    color: #999;
+    vertical-align: middle;
+  }
+}
