@@ -15,7 +15,7 @@ export const useScroll = (setState: React.Dispatch<React.SetStateAction<boolean>
         }
     };
     useEffect(() => {
-        window.addEventListener('scroll', throttle(stickTop, 200));
+        window.addEventListener('scroll', throttle(stickTop, 100));
         return () => {
             window.removeEventListener('scroll', stickTop);
         };

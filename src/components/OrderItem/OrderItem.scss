@@ -14,7 +14,7 @@
     display: flex;
     &::after {
       border-top: 1px solid #d7d7d7;
-      content: " ";
+      content: ' ';
       display: block;
       width: 100%;
       position: absolute;
@@ -52,7 +52,7 @@
           top: 50%;
           margin-top: -5px;
           display: block;
-          content: "";
+          content: '';
           width: 8px;
           height: 8px;
           border-top: none;
@@ -74,7 +74,7 @@
     font-size: 14px;
     &::after {
       border-top: 1px solid #d7d7d7;
-      content: " ";
+      content: ' ';
       display: block;
       width: 100%;
       position: absolute;
