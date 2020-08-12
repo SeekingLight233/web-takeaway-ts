@@ -1,0 +1,171 @@
+.shop-info {
+  overflow-x: hidden;
+  overflow-y: auto;
+  line-height: 1.5;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 3;
+  &__tag {
+    margin-bottom: 5px;
+    width: 90%;
+    font-size: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  &__tag-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    margin-top: 2.5px;
+  }
+  &__tag-text {
+    color: #333;
+    width: 90%;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 7px;
+    line-height: 20px;
+  }
+  &__header {
+    background: white;
+    color: #333;
+    margin-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+    position: relative;
+  }
+  &__header-top {
+    padding-right: 50px;
+    position: relative;
+    font-size: 0px;
+    padding-left: 24px;
+    margin: 18px 0;
+    i {
+      height: 18px;
+      width: 16px;
+      background-size: cover;
+      background-image: url(./img/location.png);
+      top: 1px;
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+    p {
+      display: inline-block;
+      line-height: 20px;
+      word-wrap: break-word;
+      font-size: 14px;
+    }
+    a {
+      background-image: url(https://s3plus.meituan.net/v1/mss_e2821d7f0cfe4ac1bf9202ecf9590e67/cdn-prod/file:9096d347/25e14d800434e9a9d3ee9148dd6b033f.png);
+      width: 20px;
+      background-size: cover;
+      height: 20px;
+      display: inline-block;
+      position: absolute;
+      right: 3px;
+      top: 70%;
+      margin-top: -20px;
+    }
+  }
+  &__header-bottom {
+    position: relative;
+    font-size: 0px;
+    padding-left: 24px;
+    margin-top: 25px;
+    margin-bottom: 16px;
+    i {
+      background-image: url(./img/badge.png);
+      height: 16px;
+      width: 16px;
+      background-size: cover;
+      top: 1px;
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+    p {
+      display: inline-block;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+  &__main {
+    background: white;
+    color: #333;
+    margin-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+    position: relative;
+  }
+  &__main-item {
+    position: relative;
+    font-size: 0px;
+    padding-left: 24px;
+    margin: 18px 0;
+    i {
+      background-image: url(./img/clock.png);
+      height: 16px;
+      width: 16px;
+      background-size: cover;
+      top: 2px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+    p {
+      display: inline-block;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+  &__footer {
+    position: relative;
+    font-size: 0px;
+    padding-left: 24px;
+    margin-top: 18px;
+    margin-left: -7px;
+  }
+  &__footer-notice {
+    position: relative;
+    font-size: 0px;
+    padding-left: 24px;
+    margin: 18px 0;
+    i {
+      background-image: url(./img/loudspeaker.png);
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 16px;
+      width: 16px;
+      background-size: cover;
+      display: inline-block;
+      vertical-align: top;
+    }
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      padding-right: 15px;
+      box-sizing: border-box;
+      display: inline-block;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+  &__tags {
+    background: #fff;
+    margin: 18px 0;
+  }
+}
