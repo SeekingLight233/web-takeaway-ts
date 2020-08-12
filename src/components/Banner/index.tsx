@@ -17,12 +17,9 @@ type ModelState = ConnectedProps<typeof connector>;
 const Banner: React.FC<ModelState> = (props) => {
   const { dispatch, shopInfo } = props;
   const {
-    shopName,
     shopPic,
     deliveryTimeDecoded,
     distance,
-    shopAddress,
-    shipping_time,
     bulletin,
     activityList,
   } = shopInfo;
@@ -33,13 +30,21 @@ const Banner: React.FC<ModelState> = (props) => {
     });
   }, []);
 
+  const goBack = () => {
+    window.location.href = './index.html';
+  };
+
   useEffect(() => {
     getShopInfo();
   }, []);
   return (
     <div className='banner'>
       <div className='banner__goback'>
-        <i></i>
+        <i
+          onClick={() => {
+            goBack();
+          }}
+        ></i>
       </div>
       <div className='banner__main'>
         <img className='banner__left' src={shopPic}></img>

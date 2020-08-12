@@ -27,6 +27,13 @@ const ListItem: React.FC<Item> = (props) => {
   const [discount, setDiscount] = useState(false); // 控制折扣信息显示与隐藏
 
   /**
+   * @description 跳转到商家详情
+   */
+  const goDetail = () => {
+    window.location.href = './detail.html';
+  };
+
+  /**
    * @description 渲染优惠信息
    */
   const renderDiscount = () => {
@@ -67,7 +74,12 @@ const ListItem: React.FC<Item> = (props) => {
     setDiscount(!discount);
   };
   return (
-    <div className='list-item'>
+    <div
+      className='list-item'
+      onClick={() => {
+        goDetail();
+      }}
+    >
       <div className='left-item'>
         <img className='item-img' src={picUrl} alt='' />
       </div>
@@ -100,9 +112,10 @@ const ListItem: React.FC<Item> = (props) => {
         {discounts2 ? (
           <div
             className={classNames('discount-content', { toggle: discount })}
-            onClick={() => {
+            onClick={(e) => {
               if (discounts2.length >= 3) {
                 toggleDiscounts();
+                e.stopPropagation();
               }
             }}
           >
