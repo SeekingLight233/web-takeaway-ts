@@ -1,16 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const srcRoot = path.resolve(__dirname, '..', 'src');
-
-const devPath = path.resolve(__dirname, '..', 'dev');
+const distPath = path.resolve(__dirname, '..', 'dist');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devServer: {
-    contentBase: devPath,
-    hot: true,
-  },
+  mode: 'production',
   entry: {
     index: path.join(srcRoot, 'pages', 'index', 'index.tsx'),
     detail: path.join(srcRoot, 'pages', 'detail', 'detail.tsx'),
@@ -21,23 +19,22 @@ module.exports = {
       component: path.resolve(srcRoot, 'components'),
     },
   },
-
   output: {
-    path: devPath,
-    filename: '[name].min.js',
+    path: distPath,
+    filename: '[name].[hash:8].js',
   },
-  devtool: 'source-map', //配置sourceMap
+
   module: {
     rules: [
       {
         test: /\.css$/,
-        loader: ['style-loader', 'css-loader'],
+        loader: [MiniCssExtractPlugin.loader, 'css-loader'],
         include: srcRoot,
       },
       {
         test: /\.scss$/,
         loader: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
           },
@@ -72,13 +69,24 @@ module.exports = {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        common: {
+        vendor: {
           test: /[\\/]node_modules[\\/]/,
-          chunks: 'all', //对node_modules中所有模块进行抽离
+          chunks: 'initial', //对node_modules中所有模块进行抽离
+          name: 'vendor',
+          minSize: 0,
+          minChunks: 1,
+          priority: 10,
+        },
+        common: {
           name: 'common',
+          test: /[\\/]src[\\/]/,
+          chunks: 'all',
+          minSize: 0,
+          minChunks: 2,
         },
       },
     },
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -94,6 +102,9 @@ module.exports = {
       chunks: ['common', 'detail'], // 只引用 index.js
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[hash:8].css',
+    }),
   ],
 };
