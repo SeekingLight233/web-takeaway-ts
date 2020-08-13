@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import './ListItem.scss';
 import { Item } from '../../../Models/contentList';
 import classNames from 'classnames';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Star from './Star';
 
 const ListItem: React.FC<Item> = (props) => {
@@ -81,7 +82,8 @@ const ListItem: React.FC<Item> = (props) => {
       }}
     >
       <div className='left-item'>
-        <img className='item-img' src={picUrl} alt='' />
+        <LazyLoadImage className='item-img' src={picUrl} effect='blur' />
+        {/* <img className='item-img' src={picUrl} alt='' /> */}
       </div>
       <div className='right-item'>
         <div className='shop-name'>{shopName}</div>

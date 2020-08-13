@@ -7,6 +7,7 @@ import { Spu } from '../../../Models/foods';
 import store from '../../../Models/dva';
 import FoodDetail from './FoodDetail';
 import FoodItemCount from './FoodItemCount';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export interface FoodItemProps {
   spu: Spu;
@@ -16,7 +17,6 @@ export interface FoodItemProps {
 const FoodItem: React.FC<FoodItemProps> = (props) => {
   const {
     littleImageUrl,
-    bigImageUrl,
     spuName,
     spuDesc,
     saleVolumeDecoded,
@@ -78,7 +78,12 @@ const FoodItem: React.FC<FoodItemProps> = (props) => {
       }}
     >
       <div className='food-item__left'>
-        <img className='food-item__image' src={littleImageUrl} alt='' />
+        <LazyLoadImage
+          className='food-item__image'
+          src={littleImageUrl}
+          effect='blur'
+        />
+        {/* <img className='food-item__image' src={littleImageUrl} alt='' /> */}
       </div>
       <div className='food-item__right'>
         <div className='food-item__title'>{spuName}</div>
