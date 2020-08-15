@@ -1,0 +1,38 @@
+.loading {
+  position: fixed;
+  width: 100%;
+  width: 100%;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 47px;
+  height: 47px;
+  background-image: url(../LoadingCircle/img/bg.png);
+  background-size: cover;
+  line-height: 80px;
+  color: #999;
+  text-align: center;
+  &__wrap {
+    margin-top: 10px;
+  }
+  &__loading-img {
+    transform: translateY(10px);
+    background-image: url(../LoadingCircle/img/loading.png);
+    background-size: cover;
+    width: 26px;
+    height: 26px;
+    margin: auto;
+    animation: spin 1s infinite linear;
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@ import { RootState } from '../../../Models';
 import { connect, ConnectedProps } from 'react-redux';
 import OrderItem from '../../../components/OrderItem';
 import ScrollView from '../../../components/ScrollView';
+import Loading from '../../../components/ScrollView/Loading';
 
 const mapStateToProps = ({ orderList }: RootState) => ({
   items: orderList.items,
