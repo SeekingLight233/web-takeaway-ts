@@ -1,10 +1,10 @@
 /**
  * @description 滚动加载逻辑抽离
  */
-import React, { useEffect } from "react";
-import "./ScrollView.scss";
-import LoadingCircle from "./LoadingCircle";
-import { debounce } from "../../utils/homeUtils";
+import React, { useEffect } from 'react';
+import './ScrollView.scss';
+import LoadingCircle from './LoadingCircle';
+import { debounce } from '../../utils/homeUtils';
 
 interface IProps {
   isEnd: boolean; // 是否触底
@@ -32,19 +32,19 @@ const ScrollView: React.FC<IProps> = (props) => {
    * @description 组件初始化时绑定自定义事件
    */
   useEffect(() => {
-    window.addEventListener("scroll", debounce(onLoadPage, 500));
+    window.addEventListener('scroll', debounce(onLoadPage, 500));
     return () => {
       // 销毁组件解绑自定义事件
-      window.removeEventListener("scroll", onLoadPage);
+      window.removeEventListener('scroll', onLoadPage);
     };
   }, []);
 
   return (
-    <div className="scroll-view">
+    <div className='scroll-view'>
       {children}
       {isEnd ? (
-        <div className="text-wrap">
-          <span className="loading-finish">加载完成</span>
+        <div className='text-wrap'>
+          <span className='loading-finish'>加载完成</span>
         </div>
       ) : (
         <LoadingCircle loadingText={loadingText}></LoadingCircle>

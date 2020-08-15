@@ -94,6 +94,14 @@ const Filter: React.FC = () => {
       </li>,
     ];
   };
+
+  /**
+   * @description 关闭mask
+   */
+  const closeMask = () => {
+    setOrderSpread(false);
+    setFilterSpread(false);
+  };
   return (
     <div
       className={classNames(
@@ -147,7 +155,13 @@ const Filter: React.FC = () => {
         </div>
         <FilterList show={filterSpread} toggleShow={toggleShow}></FilterList>
       </div>
-      <div className={classNames({ mask: orderSpread || filterSpread })}></div>
+      <div
+        className={classNames({ mask: orderSpread || filterSpread })}
+        onClick={(e) => {
+          e.stopPropagation();
+          closeMask();
+        }}
+      ></div>
     </div>
   );
 };

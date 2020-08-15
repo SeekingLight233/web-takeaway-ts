@@ -1,7 +1,7 @@
 /**
  * @description 点开单个菜品的详情介绍
  */
-import React from 'react';
+import React, { useRef } from 'react';
 import './FoodDetail.scss';
 import { Spu } from '../../../../Models/foods';
 import FoodItemCount from '../FoodItemCount';
@@ -21,9 +21,27 @@ const FoodDetail: React.FC<FoodItemProps & IProps> = (props) => {
     spuDesc,
     currentPrice,
   } = spu;
+
+  const cardDom = useRef(null);
+
+  /**
+   * @description 点击外部关闭弹窗
+   */
+  const closePopup = (e) => {
+    e.stopPropagation();
+    // 点击外部关闭弹窗
+    if (!cardDom.current.contains(e.target)) {
+      showImg(false);
+    }
+  };
   return (
-    <div className='food-detail'>
-      <div className='food-detail__card-wrap'>
+    <div
+      className='food-detail'
+      onClick={(e) => {
+        closePopup(e);
+      }}
+    >
+      <div className='food-detail__card-wrap' ref={cardDom}>
         <div className='food-detail__card'>
           <div
             className='food-detail__big-img'
