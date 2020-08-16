@@ -41,6 +41,13 @@ module.exports = {
           {
             loader: 'postcss-loader',
           },
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 38,
+              remPrecision: 8, //小数点精确的位数
+            },
+          },
           'sass-loader',
           {
             loader: 'sass-resources-loader',

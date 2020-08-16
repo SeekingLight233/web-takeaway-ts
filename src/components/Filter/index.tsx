@@ -20,7 +20,7 @@ const Filter: React.FC = () => {
   /**
    * @description 滚动高度为195时设置sticky为true
    */
-  // useScroll(setSticky, 195);
+  useScroll(setSticky, 195);
 
   /**
    * @description 点击筛选栏的默认行为
