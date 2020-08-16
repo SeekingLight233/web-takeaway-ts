@@ -38,6 +38,9 @@ module.exports = {
           {
             loader: 'css-loader',
           },
+          {
+            loader: 'postcss-loader',
+          },
           'sass-loader',
           {
             loader: 'sass-resources-loader',
