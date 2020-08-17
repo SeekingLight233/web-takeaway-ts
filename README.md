@@ -50,4 +50,4 @@ JUST FOR FUN :stuck_out_tongue_closed_eyes:
 
 ### 无！
 
-哈哈，主要是因为以后要全力维护另一个项目了，这个东西写的时候本身就抱着的是学习的心态。感兴趣的小伙伴可以看看我的另一个`Taro`小程序 [Forest 发车助手](https://github.com/SeekingLight233/forest-helper):satisfied:
+哈哈，主要是因为以后要全力维护另一个项目了，这个东西写的时候本身就抱着的是学习的心态。感兴趣的小伙伴可以看看我的另一个`Taro`小程序 [Forest 开车助手](https://github.com/SeekingLight233/forest-helper):satisfied:
