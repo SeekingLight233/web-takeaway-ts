@@ -14,11 +14,7 @@ JUST FOR FUN :stuck_out_tongue_closed_eyes:
 
 ## :camera:截图
 
-![](./raw/index.jpg)
-![](./raw/filter.jpg)
-![](./raw/foodlist.jpg)
-![](./raw/filter.jpg)
-![](./raw/commit.jpg)
+![](./raw/snapshot.png)
 
 ## :memo:技术栈
 
@@ -32,21 +28,23 @@ JUST FOR FUN :stuck_out_tongue_closed_eyes:
 
 ## :open_file_folder:目录大致结构
 
+```
 |-- web-takeaway
 |-- build: `webpack配置`
 |-- dev：`开发模式下的output`
 |-- dist：`生产模式下的output`
 |-- raw
 |-- src
-| |-- httpConfig.ts
-| |-- Models: `dva数据模型`
-| |-- components: `公共组件`
-| |-- pages: `页面目录`
-| | |-- detail: `商家详情页面`
-| | |-- index: `首页`
-| |-- utils: `封装的util`
-| | |-- homeUtils.ts
-| | |-- hooks.ts
+|  -- httpConfig.ts
+|  -- Models: `dva数据模型`
+|  -- components: `公共组件`
+|  -- pages: `页面目录`
+|    -- detail: `商家详情页面`
+|    -- index: `首页`
+|  -- utils: `封装的util`
+|    -- homeUtils.ts
+|    -- hooks.ts
+```
 
 ## 后续展望
 
