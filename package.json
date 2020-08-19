@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@loadable/component": "^5.13.1",
     "@types/classnames": "^2.2.10",
     "@types/lodash": "^4.14.157",
     "@types/react-dom": "^16.9.8",

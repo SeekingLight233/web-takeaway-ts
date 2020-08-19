@@ -82,10 +82,20 @@ module.exports = {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        common: {
+        vendor: {
           test: /[\\/]node_modules[\\/]/,
-          chunks: 'all', //对node_modules中所有模块进行抽离
+          chunks: 'initial', //对node_modules中所有模块进行抽离
+          name: 'vendor',
+          minSize: 0,
+          minChunks: 1,
+          priority: 10,
+        },
+        common: {
           name: 'common',
+          test: /[\\/]src[\\/]/,
+          chunks: 'all',
+          minSize: 0,
+          minChunks: 2,
         },
       },
     },
