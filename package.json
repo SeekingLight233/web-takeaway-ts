@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --open --hot --config build/webpack.dev.js",
     "build": "./node_modules/.bin/webpack --config build/webpack.prod.js --progress",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "inlineCss": true
   },
   "keywords": [],
   "author": "",
@@ -60,6 +65,7 @@
     "postcss-loader": "^3.0.0",
     "px2rem-loader": "^0.1.9",
     "react-hot-loader": "^4.12.21",
+    "react-snap": "^1.23.0",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.5",
     "webpack-dev-server": "^3.11.0"
